@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+---
+
+<Layout>
+  <Header />
+  <main>
+    <h1>Find dit lokale fællesskab</h1>
+    <p>
+      Kom med til vores næste tøjbytte-salon! Her mødes medlemmer for at bytte
+      tøj, hygge sig og nyde et glas vin. Der opstår en helt særlig stemning,
+      når kvinder i alle aldre og størrelser prøver lækkert tøj sammen! Det er
+      helt . Det er gratis og uforpligtende at tage til tøjsalon.
+    </p>
+  </main>
+</Layout>
+
+<style is:global>
+  h1 {
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    color: var(--text-color);
+  }
+
+  p {
+    font-size: var(--font-size-p2);
+    line-height: var(--line-height-p2);
+    color: var(--text-color);
+    font-family: "Monument-Medium", sans-serif;
+    font-weight: 550;
+  }
+
+  main {
+    padding: 0 75px 0 55px;
+  }
+</style>
