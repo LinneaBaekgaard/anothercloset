@@ -2,11 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import KjolerCard from "../components/KjolerCard.astro";
+// import KjolerCard from "../components/KjolerCard.astro";
+
+// const curl =
+//   "https://naqotdixmvkmxlfitrst.supabase.co/rest/v1/pleasant produkter?select=*";
+
+// const apikey =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5hcW90ZGl4bXZrbXhsZml0cnN0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyNjgxNjksImV4cCI6MjA1OTg0NDE2OX0.QEKabtlSzIXwoVA_69Agvl81ayHtTYi0FKWk_tb__t4";
+
+// const options = {
+//   headers: {
+//     apikey: apikey,
+//   },
+// };
+
+// const data = await fetch(curl, options).then((response) => response.json());
+// console.log(data);
 ---
 
 <Layout>
-  <!-- <Header /> -->
+  <Header />
   <section class="listview_container">
     <div class="discoball">
       <img src="/img/discokugle.webp" alt="Billede af discokugle" />
@@ -31,7 +46,7 @@ import KjolerCard from "../components/KjolerCard.astro";
       <a href="#">Jylland</a>
     </nav>
   </section>
-  <KjolerCard />
+  <!-- <KjolerCard /> -->
   <!-- <Footer /> -->
 </Layout>
 
