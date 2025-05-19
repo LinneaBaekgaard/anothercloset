@@ -14,6 +14,30 @@ import "../style/global.css";
       når kvinder i alle aldre og størrelser prøver lækkert tøj sammen! Det er
       helt . Det er gratis og uforpligtende at tage til tøjsalon.
     </p>
+
+    <div class="accordion">
+      <div class="accordion-item">
+        <button class="accordion-header"
+          >Fredericia<span class="plus">+</span></button
+        >
+        <div class="accordion-content">
+          <p>NÆSTE SALON ER:</p>
+          <p>
+            Torsdag 15. maj kl. 20.00 - 21.30 <br />Cafe Mauritz, Sjællandsgade
+            33, Fredericia
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">KEA<span class="plus">+</span></button>
+        <div class="accordion-content">
+          <p>Information om event på KEA.</p>
+        </div>
+      </div>
+
+      <!-- Tilføj flere items efter behov -->
+    </div>
   </main>
 </Layout>
 
@@ -31,8 +55,46 @@ import "../style/global.css";
     font-family: "Monument-Medium", sans-serif;
     font-weight: 550;
   }
+  .accordion {
+    width: 98%;
+    border-top: 1px solid black;
+  }
 
-  main {
-    /* padding: 0 50px 0 85px; */
+  .accordion-item {
+    border-bottom: 1px solid black;
+  }
+
+  .accordion-header {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 20pt;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Monument", sans-serif;
+    cursor: pointer;
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1rem;
+    font-size: 14pt;
+  }
+
+  .accordion-item.active .accordion-content {
+    max-height: 200px; /* eller auto med JS */
+    padding-bottom: 1rem;
+  }
+
+  .accordion-header .plus {
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item.active .plus {
+    transform: rotate(45deg); /* gør + til et X */
   }
 </style>
