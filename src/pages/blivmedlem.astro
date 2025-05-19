@@ -1,0 +1,126 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout>
+  <Header />
+  <div class="blivmedlem_body">
+    <h1>For kun 149 kr. om måneden kan du:</h1>
+
+    <ul>
+      <li>Låne 3 nye stykker tøj hver måned</li>
+      <li>Spare tid og penge</li>
+      <li>
+        Eksperimentere med din stil og prøve nye farver, brands og designs
+      </li>
+      <li>
+        Deltage i eksklusive tøjbytte-saloner med adgang til lækkert tøj fra
+        dine favorit brands
+      </li>
+      <li>Lade andre medlemmer låne det tøj, du ikke selv bruger</li>
+      <li>Være fuldt dækket af forsikring – både når du låner og låner ud</li>
+    </ul>
+
+    <form class="formular">
+      <h2>Tilmeld dig another closets tøjfællesskab</h2>
+
+      <div id="box_formular">
+        <label for="fname">Fornavn:</label><br />
+        <input
+          class="input"
+          type="text"
+          id="fname"
+          name="fname"
+          value="John"
+        /><br />
+        <label for="lname">Efternavn:</label><br />
+        <input
+          class="input"
+          type="text"
+          id="lname"
+          name="lname"
+          value="Doe"
+        /><br />
+        <label for="lname">E-mail:</label><br />
+        <input
+          class="input"
+          type="text"
+          id="fname"
+          name="fname"
+          value="John"
+        /><br />
+        <label for="fname">Kodeord:</label><br />
+        <input
+          class="input"
+          type="text"
+          id="fname"
+          name="fname"
+          value="John"
+        /><br />
+        <label for="lname">Bekræft kodeord:</label><br />
+        <input
+          class="input"
+          type="text"
+          id="lname"
+          name="lname"
+          value="Doe"
+        /><br />
+      </div>
+      <input id="button" type="Bliv medlem" value="Bliv medlem" />
+    </form>
+  </div>
+  <Footer />
+</Layout>
+
+<style>
+  .formular {
+    padding-top: 20px;
+  }
+
+  #box_formular {
+    padding-bottom: 20px;
+  }
+
+  .input {
+    margin-bottom: 10px;
+    width: 200px;
+    background-color: white;
+    border: 1px;
+    padding: 5px 10px 5px 10px;
+  }
+
+  #button {
+    border-radius: 20px;
+    padding: 5px 10px 5px 10px;
+    background-color: var(--orange-color);
+    border: 0px;
+    text-align: center;
+  }
+
+  body {
+    background-color: rgb(255, 205, 248);
+  }
+  .blivmedlem_body {
+    margin: 50px 50px 0px 85px;
+    padding-bottom: 100px;
+  }
+
+  ul {
+    margin-left: -20px;
+    list-style-type: circle;
+  }
+
+  h1 {
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h1);
+    color: var(--text-color);
+  }
+
+  p {
+    font-size: var(--font-size-p1);
+    line-height: var(--line-height-p1);
+    color: var(--text-color);
+  }
+</style>
