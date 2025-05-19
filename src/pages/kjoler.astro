@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import KjolerCard from "../components/KjolerCard.astro";
+---
+
+<Layout>
+  <!-- <Header /> -->
+  <section class="listview_container">
+    <div class="discoball">
+      <img src="/img/discokugle.webp" alt="Billede af discokugle" />
+    </div>
+
+    <h2 class="headline">Lej tøj til den helt <br />specielle anledning</h2>
+
+    <p class="description">
+      Som medlem af Another Closet kan du leje festtøj i en uge til til 350 kr pr styk. Det kræver bare at du kan hente tøjet selv, og bringe det tilbage i god stand efter 7 dage. Se vores udvalg af smukt festtøj herunder, se hvad dit lokale
+      klædeskab har at byde på, og skip tøjkrisen til den næste vigtige begivenhed.
+    </p>
+
+    <div class="arrow-down">
+      <a href="#"> <img src="/img/Pil.webp" alt="Pil ned" /></a>
+    </div>
+
+    <h2 class="udvalg-headline">Vores udvalg af festtøj</h2>
+    <nav class="udvalg-links">
+      <a href="#">København</a>
+      <a href="#">Sjælland</a>
+      <a href="#">Fyn</a>
+      <a href="#">Jylland</a>
+    </nav>
+  </section>
+  <KjolerCard />
+  <!-- <Footer /> -->
+</Layout>
+
+<style>
+  .listview_container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-family: "Monument-Regular", sans-serif;
+  }
+  .discoball {
+    margin-bottom: 40px;
+  }
+  .dicoball img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+  }
+  .headline {
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 300;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #222;
+    max-width: 500px;
+    text-align: left;
+  }
+  .arrow-down {
+    font-size: 28px;
+    margin-top: 60px;
+    animation: bounce 1.5s infinite;
+  }
+  .udvalg-headline {
+    text-align: center;
+    padding: 40px 20px 10px;
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  .udvalg-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .udvalg-links a {
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 4px;
+    transition: opacity 0.2s ease;
+  }
+  .udvalg-links a:hover {
+    opacity: 0.6;
+  }
+</style>
