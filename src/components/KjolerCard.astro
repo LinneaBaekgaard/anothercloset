@@ -2,15 +2,13 @@
 const { data } = Astro.props;
 ---
 
-<article>
-  <a href={`../product/${data.id}`}>
-    <img src={"/imgs/" + data.image} alt={data.imgdescr} />
-    <p>
-      {data.name}<br />{data.price},00 DKK<br /><spanc class="size">{data.size}</spanc>
-    </p>
-  </a>
-</article>
-
+<!-- <article>
+  <a href={`../singleview/${data.id}`}>
+  <img src={"/img/" + data.image} alt={data.imgdescr} />
+  <p>
+    {data.name}<br /><br /><spanc class="size">{data.size}</spanc>
+  </p>
+</article> -->
 <style>
   img {
     height: auto;
