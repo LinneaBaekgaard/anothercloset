@@ -1,0 +1,157 @@
+<header>
+  <p class="tekst-top">Vores fælles klædeskab</p>
+  <img class="logostack" src="/img/logostack.png" alt="Logo" />
+  <img class="logo" src="/img/logo.png" alt="Logo" />
+
+  <div id="sideMenu" class="side-menu">
+    <div class="menu-label" id="menuButton">menu</div>
+    <a href="#">bliv medlem</a>
+    <a href="#">find dit tøjfællesskab</a>
+    <a href="#">kjoleskabet</a>
+    <a href="#">spørgsmål og svar</a>
+    <img class="logo-menu" src="/img/logostack.png" alt="Logo" />
+  </div>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const sideMenu = document.getElementById("sideMenu");
+    const closeButton = document.getElementById("closeButton");
+
+    menuButton.addEventListener("click", () => {
+      sideMenu.classList.toggle("open");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!sideMenu.contains(e.target) && !menuButton.contains(e.target)) {
+        sideMenu.classList.remove("open");
+      }
+    });
+  </script>
+</header>
+
+<style>
+  .tekst-top {
+    color: #000;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+
+  .logostack {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -380px;
+    width: 415px;
+    height: 100%;
+    background-color: #f3ffde;
+    transition: left 0.7s ease;
+    padding: 160px 20px 20px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .side-menu.open {
+    left: 0;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Lodret "menu"-tekst og sort streg */
+  .menu-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    background-color: #f3ffde;
+    border-left: 1px solid black;
+    writing-mode: vertical-rl;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .side-menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    border-top: solid 1px #f3ffde;
+    border-bottom: solid 1px #f3ffde;
+  }
+
+  .logo-menu {
+    margin-top: 80px;
+  }
+
+  .side-menu a:hover {
+    transition: 0.5s ease;
+    /* transform: scale(1.03);
+      transition: transform 0.2s ease; */
+    border-top: solid 1px #000;
+    border-bottom: solid 1px #000;
+  }
+
+  .side-menu.open {
+    left: 0;
+  }
+
+  @media (min-width: 768px) {
+    .logostack {
+      display: none;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto;
+      width: 380px;
+    }
+
+    .tekst-top {
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .logostack {
+      display: none;
+    }
+
+    .logo {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 400px;
+    }
+
+    .tekst-top {
+      display: flex;
+      justify-content: left;
+      margin-left: 80px;
+      font-size: 25px;
+      padding-top: 20px;
+    }
+  }
+</style>
