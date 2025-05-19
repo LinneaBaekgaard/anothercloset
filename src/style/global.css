@@ -1,0 +1,48 @@
+
+:root {
+  /* colors */
+  --yellow-color: #f3ffde;
+  --orange-color: #ff5100;
+  --green-color: #2a7f3b;
+  --purple-color: #cd59ff;
+  --text-color: #000000;
+  --background-color: #ffffff;
+  
+  /* typography */
+  --font-size-p1: 20pt;
+  --font-size-p2: 14pt;
+  --font-size-h1: 48pt;
+  --font-size-h2: 38pt;
+  --font-size-h3: 28pt;
+  --font-size-h4: 18pt;
+  --font-size-h5: 20pt;
+  
+  /*line-height*/
+  --line-height-p1: 24pt;
+  --line-height-h1: 52pt;
+  --line-height-p2: 15pt;
+}
+
+@media (max-width: 768px) {
+    :root {
+      --font-size-p1: 16pt;
+      --font-size-p2: 12pt;
+      --font-size-h1: 30pt;
+      --font-size-h2: 30pt;
+      --font-size-h3: 20pt;
+      --font-size-h4: 14pt;
+      --font-size-h5: 16pt;
+    }
+  }
+
+
+@font-face {
+  font-family: "Monument-Regular", sans-serif;
+  src: url(/fonts/ABCMonumentGrotesk-Regular-Trial.woff) format("woff");
+  font-weight: 400;
+}
+@font-face {
+      font-family: "Monument-Medium", sans-serif;
+      src: url(/fonts/ABCMonumentGrotesk-Medium-Trial.woff) format("woff");
+      font-weight: 500;
+    }
