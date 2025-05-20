@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import "../style/global.css";
 ---
 
 <Layout>
@@ -46,7 +47,7 @@ import Header from "../components/Header.astro";
     <div class="dropdown">
       <div class="dropdown-header">
         <span class="dropdown-number">3</span>
-        <span class="dropdown-titel">Find tre strykker tøj til klædeksabet</span
+        <span class="dropdown-titel">Find tre strykker tøj til klædeskabet</span
         >
       </div>
       <div class="dropdown-text">
@@ -111,7 +112,6 @@ import Header from "../components/Header.astro";
     </p>
     <button class="medlem-btn">se vores udvalg af festtøj</button>
   </section>
-  <KjoleSlider />
 </Layout>
 
 <script>
@@ -142,8 +142,7 @@ import Header from "../components/Header.astro";
   }
 
   .medlem-btn {
-    /* background-color: var(--orange-color); */
-    background-color: orange;
+    background-color: var(--orange-color);
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -206,10 +205,11 @@ import Header from "../components/Header.astro";
   }
 
   .rulletekst {
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     white-space: nowrap;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
   }
 
   .rulletekst p {
