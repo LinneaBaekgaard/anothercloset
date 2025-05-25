@@ -5,17 +5,14 @@ import Footer from "../components/Footer.astro";
 import KjolerCard from "../components/KjolerCard.astro";
 import "../style/global.css";
 
-const curl = "https://ngzpzxuvxcobhkrwrgpi.supabase.co/rest/v1/kjole? kjoler?select=*";
-
+const curl = "https://ngzpzxuvxcobhkrwrgpi.supabase.co/rest/v1/kjole?select=*";
 const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nenB6eHV2eGNvYmhrcndyZ3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjQ1MjgsImV4cCI6MjA2MjY0MDUyOH0.INYStzoZSVH73X4YGeNOih21F7NaJX1O57r9C3CAxww";
 const options = {
   headers: {
-    apikey: apikey,
+    apikey,
   },
 };
-
-const data = await fetch(curl, options).then((response) => response.json());
-console.log(data);
+const data = await fetch(curl, options).then((res) => res.json());
 ---
 
 <Layout>
