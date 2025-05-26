@@ -1,0 +1,131 @@
+---
+const dresses = [
+  {
+    src: "/img/orangecutout.png",
+    label: "Malene Birger kjole",
+    size: "str. 38",
+  },
+  {
+    src: "/img/kjole2.png",
+    label: "Anden kjole",
+    size: "str. 40",
+  },
+  {
+    src: "/img/kjole3.png",
+    label: "Tredje kjole",
+    size: "str. 36",
+  },
+];
+---
+
+<div class="slider-wrapper">
+  <button class="nav left" onclick="previousSlide()">&#10094;</button>
+
+  <div class="slider">
+    {
+      dresses.map((dress, index) => (
+        <div
+          class="slide"
+          style={`display: ${index === 0 ? "block" : "none"}`}
+          data-index={index}
+        >
+          <img src={dress.src} alt={dress.label} class="dress-image" />
+          <div class="text-container">
+            <span class="label">{dress.label}</span>
+            <span class="size">{dress.size}</span>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <button class="nav right" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script type="module" is:inline>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
+  }
+
+  window.nextSlide = () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  };
+
+  window.previousSlide = () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  };
+</script>
+
+<style>
+  .slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .slider {
+    position: relative;
+    width: 90%;
+    text-align: center;
+  }
+
+  .slide {
+    width: 100%;
+  }
+
+  .dress-image {
+    width: 60%;
+  }
+
+  .text-container {
+    margin-top: 1rem;
+  }
+
+  .label {
+    display: block;
+    background-color: #a855f7;
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 1rem;
+  }
+
+  .size {
+    display: inline-block;
+    background-color: #a855f7;
+    color: black;
+    font-weight: bold;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 40px;
+  }
+
+  .nav {
+    position: absolute;
+    top: 35%;
+    background-color: transparent;
+    border: none;
+    color: #6d6d6d;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .nav.left {
+    left: 10%;
+  }
+
+  .nav.right {
+    right: 10%;
+  }
+</style>
