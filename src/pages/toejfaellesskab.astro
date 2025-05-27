@@ -1,19 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import "../style/global.css";
 ---
 
 <Layout>
   <Header />
   <main>
-    <h1>Find dit lokale fællesskab</h1>
-    <p>
-      Kom med til vores næste tøjbytte-salon! Her mødes medlemmer for at bytte
-      tøj, hygge sig og nyde et glas vin. Der opstår en helt særlig stemning,
-      når kvinder i alle aldre og størrelser prøver lækkert tøj sammen! Det er
-      helt . Det er gratis og uforpligtende at tage til tøjsalon.
-    </p>
+    <div class="hero">
+      <h1>Find dit lokale fællesskab</h1>
+      <p>
+        Kom med til vores næste tøjbytte-salon! Her mødes medlemmer for at bytte
+        tøj, hygge sig og nyde et glas vin. Der opstår en helt særlig stemning,
+        når kvinder i alle aldre og størrelser prøver lækkert tøj sammen! Det er
+        gratis og uforpligtende at tage til tøjsalon.
+      </p>
+    </div>
 
     <div class="accordion">
       <div class="accordion-item">
@@ -36,12 +39,68 @@ import "../style/global.css";
         </div>
       </div>
 
-      <!-- Tilføj flere items efter behov -->
+      <div class="accordion-item">
+        <button class="accordion-header"
+          >Lyngby<span class="plus">+</span></button
+        >
+        <div class="accordion-content">
+          <p>Information om event i Lyngby.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header"
+          >Nørrebro<span class="plus">+</span></button
+        >
+        <div class="accordion-content">
+          <p>Information om event i Nørrebro.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Ribe<span class="plus">+</span></button
+        >
+        <div class="accordion-content">
+          <p>Information om event i Ribe.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header"
+          >Ringkøbing<span class="plus">+</span></button
+        >
+        <div class="accordion-content">
+          <p>Information om event i Ringkøbing.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header"
+          >Roskilde<span class="plus">+</span></button
+        >
+        <div class="accordion-content">
+          <p>Information om event i Roskilde.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header"
+          >AAU København<span class="plus">+</span></button
+        >
+        <div class="accordion-content">
+          <p>Information om event i AAU København.</p>
+        </div>
+      </div>
     </div>
   </main>
 </Layout>
 
-<style is:global>
+<style>
+  .hero {
+    margin: 50px 0;
+    padding: 0 20px 0 2rem;
+  }
+
   h1 {
     font-size: var(--font-size-h1);
     line-height: var(--line-height-h1);
@@ -56,7 +115,7 @@ import "../style/global.css";
     font-weight: 550;
   }
   .accordion {
-    width: 98%;
+    width: 100%;
     border-top: 1px solid black;
   }
 
@@ -68,7 +127,8 @@ import "../style/global.css";
     width: 100%;
     text-align: left;
     padding: 1rem;
-    font-size: 20pt;
+    padding-left: 2rem;
+    font-size: var(--font-size-h3);
     background: none;
     border: none;
     display: flex;
@@ -80,21 +140,35 @@ import "../style/global.css";
   .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
-    padding: 0 1rem;
+    transition: max-height 1s ease;
+    padding: 0 2rem;
     font-size: 14pt;
   }
 
-  .accordion-item.active .accordion-content {
-    max-height: 200px; /* eller auto med JS */
-    padding-bottom: 1rem;
+  .plus {
+    padding-right: 40px;
   }
 
-  .accordion-header .plus {
-    transition: transform 0.3s ease;
-  }
-
-  .accordion-item.active .plus {
-    transform: rotate(45deg); /* gør + til et X */
+  .accordion-item:hover {
+    background-color: var(--yellow-color);
   }
 </style>
+
+<script>
+  const headers = document.querySelectorAll(".accordion-header");
+
+  headers.forEach((header) => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+      const content = item.querySelector(".accordion-content");
+
+      item.classList.toggle("active");
+
+      if (item.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        content.style.maxHeight = null;
+      }
+    });
+  });
+</script>
