@@ -6,8 +6,7 @@ import KjolerCard from "../components/KjolerCard.astro";
 import "../style/global.css";
 
 const curl = "https://ngzpzxuvxcobhkrwrgpi.supabase.co/rest/v1/kjole?select=*";
-const apikey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nenB6eHV2eGNvYmhrcndyZ3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjQ1MjgsImV4cCI6MjA2MjY0MDUyOH0.INYStzoZSVH73X4YGeNOih21F7NaJX1O57r9C3CAxww";
+const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nenB6eHV2eGNvYmhrcndyZ3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjQ1MjgsImV4cCI6MjA2MjY0MDUyOH0.INYStzoZSVH73X4YGeNOih21F7NaJX1O57r9C3CAxww";
 const options = {
   headers: {
     apikey,
@@ -24,21 +23,22 @@ console.log(data);
       <img src="/img/discokugle.webp" alt="Billede af discokugle" />
     </div>
 
-    <h2 class="headline">Lej tøj til den helt <br />specielle anledning</h2>
+    <div class="headline-container">
+      <h2 class="headline">Lej tøj til den helt <br />specielle anledning</h2>
 
-    <p class="description">
-      Som medlem af Another Closet kan du leje festtøj i en uge til til 350 kr
-      pr styk. Det kræver bare at du kan hente tøjet selv, og bringe det tilbage
-      i god stand efter 7 dage. Se vores udvalg af smukt festtøj herunder, se
-      hvad dit lokale klædeskab har at byde på, og skip tøjkrisen til den næste
-      vigtige begivenhed.
-    </p>
+      <p class="description">
+        Som medlem af Another Closet kan du leje festtøj i en uge til til 350 kr pr styk. Det kræver bare at du kan hente tøjet selv, og bringe det tilbage i god stand efter 7 dage. Se vores udvalg af smukt festtøj herunder, se hvad dit lokale
+        klædeskab har at byde på, og skip tøjkrisen til den næste vigtige begivenhed.
+      </p>
 
-    <div class="arrow-down">
-      <a href="#"> <img src="/img/Pil.webp" alt="Pil ned" /></a>
+      <div class="arrow-down">
+        <a href="#udvalg"> <img src="/img/Pil.webp" alt="Pil ned" /></a>
+      </div>
     </div>
+  </section>
 
-    <h2 class="udvalg-headline">Vores udvalg af festtøj</h2>
+  <section>
+    <h2 id="udvalg" class="udvalg-headline">Vores udvalg af festtøj</h2>
     <nav class="udvalg-links">
       <a href="#">København</a>
       <a href="#">Sjælland</a>
@@ -46,8 +46,12 @@ console.log(data);
       <a href="#">Jylland</a>
     </nav>
   </section>
-  {data.map((kjole) => <KjolerCard data={kjole} />)}
-  <!-- <Footer /> -->
+
+  <div class="cards">
+    {data.map((kjole) => <KjolerCard data={kjole} />)}
+  </div>
+  <!-- {data.map((kjole) => <KjolerCard data={kjole} />)} -->
+  <Footer />
 </Layout>
 
 <style>
@@ -85,6 +89,9 @@ console.log(data);
     margin-top: 60px;
     animation: bounce 1.5s infinite;
   }
+  .headline-container {
+    margin: 0 55px;
+  }
   .udvalg-headline {
     text-align: center;
     padding: 40px 20px 10px;
@@ -108,5 +115,76 @@ console.log(data);
   }
   .udvalg-links a:hover {
     opacity: 0.6;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .listview_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .discoball {
+      grid-column: 1;
+    }
+    .discoball img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+    .headline-container {
+      grid-column: 2;
+      text-align: left;
+    }
+    .headline-container {
+      text-align: left;
+    }
+    .headline {
+      font-size: 32px;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+    .arrow-down {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px auto 0;
+    }
+    .arrow-down img {
+      width: 24px;
+      height: auto;
+      margin-top: 70px;
+    }
+    .udvalg-links {
+      justify-content: left;
+      font-size: 25px;
+      gap: 50px;
+      margin-left: 80px;
+    }
+    .udvalg-headline {
+      font-size: 48px;
+      padding: 0 20px 10px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      margin-top: 40px;
+    }
   }
 </style>

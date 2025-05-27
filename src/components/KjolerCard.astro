@@ -2,16 +2,24 @@
 const { data } = Astro.props;
 ---
 
-<article>
+<article class="kjoler-card">
   <a href={`../singleview/${data.id}`}>
     <img src={"/img/" + data.image} alt={data.imgdescr} />
     <p>
-      {data.name}<br /><br /><spanc class="size">{data.size}</spanc>
+      <spanc class="name">{data.name}</spanc><br /><br /><spanc class="size">str. {data.size}</spanc>
     </p>
   </a>
 </article>
 
 <style>
+  .kjoler-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
   img {
     height: auto;
     width: 100%;
@@ -25,8 +33,12 @@ const { data } = Astro.props;
     margin-left: 10px;
   }
 
-  .size {
-    color: #582d93;
+  .size,
+  .name {
+    background-color: #cd59ff;
+    color: black;
+    padding: 3px 10px;
+    border-radius: 15px;
   }
 
   a {
