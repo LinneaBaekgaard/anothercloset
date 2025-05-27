@@ -4,6 +4,14 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import BilledeSlider from "../components/BilledeSlider.astro";
 import "../style/global.css";
+
+const sharedDresses = [
+  {
+    src: "/img/orangecutout.png",
+    label: "Malene Birger Kjole",
+    size: "str. 38",
+  },
+];
 ---
 
 <Layout>
@@ -92,7 +100,10 @@ import "../style/global.css";
   </section>
 
   <div class="rulletekst">
-    <p>Fredericia - KEA - Lyngy - Nørrebro - Ribe - Ringkøbing - Roskilde</p>
+    <p>
+      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU –
+      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU
+    </p>
   </div>
 
   <section class="citat-container">
@@ -121,7 +132,7 @@ import "../style/global.css";
       <button class="btn2">se vores udvalg af festtøj</button>
     </div>
     <div class="slider">
-      <BilledeSlider />
+      <BilledeSlider dresses={sharedDresses} mode="slider" />
     </div>
   </section>
   <Footer />
