@@ -27,66 +27,62 @@ const sharedDresses = [
     <button class="btn1">bliv medlem</button>
   </div>
 
-  <div class="dropdown-list">
-    <div class="tilmeld-overskrift">
-      <p>Sådan fungerer det:</p>
+  <div class="tilmeld-overskrift">
+    <p>Sådan fungerer det:</p>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">
+      <span class="dropdown-number">1</span>
+      <span class="dropdown-titel">Vælg dit tøjfællesskab</span>
     </div>
-    <div class="dropdown">
-      <div class="dropdown-header">
-        <span class="dropdown-number">1</span>
-        <span class="dropdown-titel">Meld dig til</span>
-      </div>
-      <div class="dropdown-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quae
-          reprehenderit voluptatibus blanditiis facere tenetur, accusamus
-          excepturi expedita officiis tempora consectetur doloremque praesentium
-          quisquam magnam optio saepe eaque labore quis?
-        </p>
-      </div>
+    <div class="dropdown-tekst">
+      <p>
+        Vi har mange lokale tøjfællesskaber rundt om i Danmark, så det handler
+        bare om at finde det som er tættest på dig.
+      </p>
     </div>
-    <div class="dropdown">
-      <div class="dropdown-header">
-        <span class="dropdown-number">2</span>
-        <span class="dropdown-titel">Vælg dit tøjfællesskab</span>
-      </div>
-      <div class="dropdown-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quae
-          reprehenderit voluptatibus blanditiis facere tenetur, accusamus
-          excepturi expedita officiis tempora consectetur doloremque praesentium
-          quisquam magnam optio saepe eaque labore quis?
-        </p>
-      </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">
+      <span class="dropdown-number">2</span>
+      <span class="dropdown-titel">Meld dig til</span>
     </div>
-    <div class="dropdown">
-      <div class="dropdown-header">
-        <span class="dropdown-number">3</span>
-        <span class="dropdown-titel">Find tre strykker tøj til klædeskabet</span
-        >
-      </div>
-      <div class="dropdown-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quae
-          reprehenderit voluptatibus blanditiis facere tenetur, accusamus
-          excepturi expedita officiis tempora consectetur doloremque praesentium
-          quisquam magnam optio saepe eaque labore quis?
-        </p>
-      </div>
+    <div class="dropdown-tekst">
+      <p>
+        Når du har fundet dit tøjfællesskab, kan du melde dig til her på vores
+        side, eller du kan komme til næste tøjsalon og lære mere og blived
+        medlem der.
+      </p>
     </div>
-    <div class="dropdown">
-      <div class="dropdown-header">
-        <span class="dropdown-number">4</span>
-        <span class="dropdown-titel">Kom til tøjsalonen</span>
-      </div>
-      <div class="dropdown-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quae
-          reprehenderit voluptatibus blanditiis facere tenetur, accusamus
-          excepturi expedita officiis tempora consectetur doloremque praesentium
-          quisquam magnam optio saepe eaque labore quis?
-        </p>
-      </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">
+      <span class="dropdown-number">3</span>
+      <span class="dropdown-titel">Find tre strykker tøj til klædeskabet</span>
+    </div>
+    <div class="dropdown-tekst">
+      <p>
+        For at vi har nok tøj til alle, skal du finde tre stykker tøj, som du
+        ikke får brugt, og tage dem med til næste salon, for der er uden tvivl
+        andre som lige går og mangler dét stykke tøj.
+      </p>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-header">
+      <span class="dropdown-number">4</span>
+      <span class="dropdown-titel">Kom til tøjsalonen</span>
+    </div>
+    <div class="dropdown-tekst">
+      <p>
+        Vi har løbende tøjsaloner - ca. 10 gange om året. Her kommer alle, og
+        afleverer de tre stykker tøj som de lånte til sidste salon, og finder så
+        tre nye stykker som de kan tage med hjem og bruge indtil næste gang.
+      </p>
     </div>
   </div>
 
@@ -125,7 +121,7 @@ const sharedDresses = [
     <div>
       <h1>Lej tøj til den helt specielle anledning</h1>
       <p class="fest-tekst">
-        Som meldem kan du leje festkjoler til 350 kr pr styk. Tilmeld dig
+        Som medlem kan du leje festkjoler til 350 kr pr styk. Tilmeld dig
         Another Closet, og gå på opdagelse i vores fælles cirkulære klædeskab
         for 149 kr. om måneden.
       </p>
@@ -137,13 +133,6 @@ const sharedDresses = [
   </section>
   <Footer />
 </Layout>
-
-<script>
-  function toggleStep(element) {
-    const dropdown = element.parentElement;
-    dropdown.classList.toggle("open");
-  }
-</script>
 
 <style>
   .medlem-container {
@@ -176,52 +165,52 @@ const sharedDresses = [
     margin-bottom: 40px;
   }
 
-  .dropdown {
-    border-bottom: 1px solid #000;
-    font-size: var(--font-size-p1);
-  }
-
-  .dropdown-header {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
   .tilmeld-overskrift {
     background-color: #f3ffde;
     color: #000;
     padding: 10px;
     font-size: var(--font-size-p1);
     border-top: solid 1px #000;
-    border-bottom: solid 1px #000;
+  }
+
+  .tilmeld-overskrift p {
+    margin-left: 30px;
+  }
+
+  .dropdown {
+    width: 100%;
+    border-top: 1px solid black;
+  }
+
+  .dropdown-header {
+    font-size: var(--font-size-p1);
+    background: none;
+    border: none;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .dropdown-tekst {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease;
   }
 
   .dropdown-number {
     background-color: #3b7d3c;
     color: rgb(0, 0, 0);
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 15px;
-    margin: 5px 0 5px 5px;
+    margin: 5px 15px 5px 30px;
   }
 
   .dropdown-titel {
-    padding: 5px;
-  }
-  .dropdown-text {
-    display: none;
-    padding: 1em;
-    background-color: #f9f9f9;
-  }
-
-  .dropdown.open .dropdown-text {
-    display: block;
+    padding: 7px;
   }
 
   .billeder-container {
@@ -354,3 +343,22 @@ const sharedDresses = [
     }
   }
 </style>
+
+<script>
+  const headers = document.querySelectorAll(".dropdown-header");
+
+  headers.forEach((header) => {
+    header.addEventListener("click", () => {
+      const item = header.parentElement;
+      const content = item.querySelector(".dropdown-tekst");
+
+      item.classList.toggle("active");
+
+      if (item.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        content.style.maxHeight = null;
+      }
+    });
+  });
+</script>
