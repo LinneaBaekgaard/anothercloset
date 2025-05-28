@@ -1,4 +1,3 @@
-
 :root {
   /* colors */
   --yellow-color: #f3ffde;
@@ -7,8 +6,18 @@
   --purple-color: #cd59ff;
   --text-color: #000000;
   --background-color: #ffffff;
-  
+
   /* typography */
+
+  /* De nye */
+  --size-h1: 40pt;
+  --font-h1: "archivo-condensed", sans-serif;
+
+  --size-p1: 18pt;
+  --font-p1: "Monument-Regular", sans-serif;
+  --line-p1: 22pt;
+
+  /* De gamle */
   --font-size-p1: 20pt;
   --font-size-p2: 14pt;
   --font-size-h1: 48pt;
@@ -16,33 +25,40 @@
   --font-size-h3: 28pt;
   --font-size-h4: 18pt;
   --font-size-h5: 20pt;
-  
+
   /*line-height*/
-  --line-height-p1: 24pt;
   --line-height-h1: 52pt;
   --line-height-p2: 15pt;
 }
 
 @media (max-width: 768px) {
-    :root {
-      --font-size-p1: 16pt;
-      --font-size-p2: 12pt;
-      --font-size-h1: 30pt;
-      --font-size-h2: 30pt;
-      --font-size-h3: 20pt;
-      --font-size-h4: 14pt;
-      --font-size-h5: 16pt;
-    }
-  }
+  :root {
+    /* de nye */
+    --size-h1: 25pt;
+    --font-h1: "archivo-condensed", sans-serif;
 
+    --size-p1: 12pt;
+    --font-p1: "Monument-Regular", sans-serif;
+    --line-p1: 16pt;
+
+    /* de gamle */
+    --font-size-p1: 16pt;
+    --font-size-p2: 12pt;
+    --font-size-h1: 30pt;
+    --font-size-h2: 30pt;
+    --font-size-h3: 20pt;
+    --font-size-h4: 14pt;
+    --font-size-h5: 16pt;
+  }
+}
 
 @font-face {
   font-family: "Monument-Regular", sans-serif;
   src: url(/fonts/ABCMonumentGrotesk-Regular-Trial.woff) format("woff");
-  font-weight: 400;
+  font-weight: 50;
 }
 @font-face {
-      font-family: "Monument-Medium", sans-serif;
-      src: url(/fonts/ABCMonumentGrotesk-Medium-Trial.woff) format("woff");
-      font-weight: 500;
-    }
+  font-family: "Monument-Medium", sans-serif;
+  src: url(/fonts/ABCMonumentGrotesk-Medium-Trial.woff) format("woff");
+  font-weight: 500;
+}
