@@ -20,6 +20,32 @@ import "../style/global.css";
       </p>
     </div>
     <Accordion />
+    <section class="toej_section">
+      <div class="toej-imgs">
+        <div class="toejsalon">
+          <img src="/img/toejsalon.png" alt="Kvinder til tøjsalon" />
+        </div>
+
+        <div class="toejraekke">
+          <img src="/img/toej-2.png" alt="Tøj på tøjstativ" />
+        </div>
+      </div>
+
+      <div class="toej-text">
+        <p>
+          Vi afholder saloner 10 gange om året i forskellige danske byer. Som
+          medlem af Another Closet kan du deltage i salonerne og låne 3 stykker
+          tøj med hjem hver gang. Du kan altid finde de kommende salondatoer på
+          vores hjemmeside.
+        </p>
+        <p>
+          Vi er typisk mellem 15 og 30 mennesker til hver salon. Nogle medlemmer
+          bliver i et par timer for at hygge og prøve tøj, mens andre kun kigger
+          forbi for en hurtig tøjbytning. Begge dele er helt okay – du kan
+          tilpasse det, som det passer dig bedst!
+        </p>
+      </div>
+    </section>
   </main>
   <Footer />
 </Layout>
@@ -39,5 +65,54 @@ import "../style/global.css";
   p {
     font-size: var(--size-p1);
     font-family: var(--monument-reg);
+  }
+
+  .toej_section {
+    margin: 50px 0;
+  }
+
+  .toej-text {
+    padding: 0 20px 0 2rem;
+    margin: 50px 0;
+  }
+
+  .toej-imgs {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .toejsalon {
+    width: 100%;
+    height: auto;
+  }
+  .toejsalon img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+  }
+
+  .toejraekke {
+    width: 100%;
+    height: auto;
+  }
+  .toejraekke img {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: auto;
+  }
+
+  @media (min-width: 768px) {
+    .toej-imgs {
+      align-items: flex-start;
+      margin-left: 2rem;
+    }
+
+    .toejsalon img,
+    .toejraekke img {
+      margin: 0; /* fjern auto-centrering */
+    }
   }
 </style>
