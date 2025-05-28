@@ -44,8 +44,8 @@ const sharedDresses = [
     </div>
     <div class="dropdown-tekst">
       <p>
-        Vi har mange lokale tøjfællesskaber rundt om i Danmark, så det handler
-        bare om at finde det som er tættest på dig.
+        Vi har mange lokale tøjfællesskaber rundt om i Danmark, så det <br
+        />handler bare om at finde det som er tættest på dig.
       </p>
     </div>
   </div>
@@ -58,7 +58,7 @@ const sharedDresses = [
     <div class="dropdown-tekst">
       <p>
         Når du har fundet dit tøjfællesskab, kan du melde dig til her på vores
-        side, eller du kan komme til næste tøjsalon og lære mere og blived
+        side, eller du <br />kan komme til næste tøjsalon og lære mere og blived
         medlem der.
       </p>
     </div>
@@ -67,13 +67,13 @@ const sharedDresses = [
   <div class="dropdown">
     <div class="dropdown-header">
       <span class="dropdown-number">3</span>
-      <span class="dropdown-titel">Find tre strykker tøj</span>
+      <span class="dropdown-titel">Find tre stykker tøj</span>
     </div>
     <div class="dropdown-tekst">
       <p>
         For at vi har nok tøj til alle, skal du finde tre stykker tøj, som du
-        ikke får brugt, og tage dem med til næste salon, for der er uden tvivl
-        andre som lige går og mangler dét stykke tøj.
+        ikke får brugt, og tage dem med <br />til næste salon, for der er uden
+        tvivl andre som lige går og mangler dét stykke tøj.
       </p>
     </div>
   </div>
@@ -81,13 +81,14 @@ const sharedDresses = [
   <div class="dropdown-sidst">
     <div class="dropdown-header">
       <span class="dropdown-number">4</span>
-      <span class="dropdown-titel">Kom til tøjsalonen</span>
+      <span class="dropdown-titel">Kom til tøjsalon</span>
     </div>
     <div class="dropdown-tekst">
       <p>
         Vi har løbende tøjsaloner - ca. 10 gange om året. Her kommer alle, og
-        afleverer de tre stykker tøj som de lånte til sidste salon, og finder så
-        tre nye stykker som de kan tage med hjem og bruge indtil næste gang.
+        afleverer de tre stykker tøj <br />som de lånte til sidste salon, og
+        finder så tre nye stykker som de kan tage med hjem og bruge indtil næste
+        gang.
       </p>
     </div>
   </div>
@@ -219,7 +220,7 @@ const sharedDresses = [
   }
 
   .dropdown-header:hover {
-    background-color: #f3ffde;
+    background-color: var(--yellow-color);
   }
 
   .dropdown-tekst {
@@ -227,12 +228,15 @@ const sharedDresses = [
     overflow: hidden;
     transition: max-height 1s ease;
     font: var(--size-p1) var(--monument-reg);
-    margin-left: 85px;
-    width: 600px;
+    padding: 0 12px 0 87px;
+    background-color: var(--yellow-color);
   }
 
   .dropdown-tekst p {
     margin-top: -2px;
+    margin: 0;
+    width: 100%;
+    background-color: var(--yellow-color);
   }
 
   .dropdown-number {
@@ -325,6 +329,10 @@ const sharedDresses = [
     margin: 0 10px 40px 30px;
   }
 
+  .dropdown-tekst br {
+    display: none;
+  }
+
   @keyframes scroll-text {
     0% {
       transform: translateX(0%);
@@ -335,6 +343,10 @@ const sharedDresses = [
   }
 
   @media (min-width: 768px) {
+    .dropdown-tekst br {
+      display: block;
+    }
+
     .hero-video {
       width: 100%;
       height: auto;
