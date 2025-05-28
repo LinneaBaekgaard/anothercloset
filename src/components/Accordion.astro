@@ -1,0 +1,145 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+
+const sharedDresses = [
+  { src: "/img/blaa_slaa-om.jpg", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/blaa-jeans.jpg", label: "La Rouge", size: "str. M" },
+  { src: "/img/gul-skjorte.jpg", label: "InWear", size: "str. 40" },
+  { src: "/img/rod-nederdel.jpg", label: "Esmé Studios", size: "str. M" },
+];
+
+const accordionData = [
+  {
+    title: "Fredericia",
+    date: "Torsdag den 22. maj kl. 17.00 - 19.00",
+    location: "Cafe Mauritz, Sjællandsgade 33, Fredericia",
+    dresses: sharedDresses,
+  },
+  {
+    title: "KEA",
+    date: "Torsdag den 15. maj kl. 20.00 - 21.30",
+    location: "Guldbergsgade 29D, igennem butikken Res Res",
+    dresses: sharedDresses,
+  },
+  {
+    title: "Lyngby",
+    date: "Tirsdag den 20. maj kl. 20.00 - 21.30",
+    location: "Kongevejen 61, Kongens Lyngby",
+    dresses: sharedDresses,
+  },
+  {
+    title: "Nørrebro",
+    date: "Torsdag den 22. maj kl. 17.00 - 20.30",
+    location: "Guldbergsgade 29D, igennem butikken Res Res",
+    dresses: sharedDresses,
+  },
+  {
+    title: "Ribe",
+    date: "Onsdag den 21. maj kl. 19.00 - 20.30",
+    location: "Ribe Pakhus, Rosen Alle 2, Ribe",
+    dresses: sharedDresses,
+  },
+  {
+    title: "Ringkøbing",
+    date: "Mandag den 24. marts kl. 19.00 - 20.30",
+    location: "Hos KLUNS Erichsens Vej 1B",
+    dresses: sharedDresses,
+  },
+  {
+    title: "Roskilde",
+    date: "Onsdag den 25. juni kl. 20.00 - 21.30",
+    location: "Tønsbergvej 70, Roskilde",
+    dresses: sharedDresses,
+  },
+  {
+    title: "AAU København",
+    date: "Mandag den 26. maj kl. 11.30 - 13.00",
+    location: "Studentertorvet, Frederikskaj 10, 2450 København",
+    dresses: sharedDresses,
+  },
+];
+---
+
+<div class="accordion">
+  {
+    accordionData.map((item) => (
+      <AccordionItem
+        title={item.title}
+        date={item.date}
+        location={item.location}
+        dresses={item.dresses}
+      />
+    ))
+  }
+</div>
+
+<style>
+  .accordion {
+    width: 100%;
+    border-top: 1px solid black;
+  }
+</style>
+
+<script is:client type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    // Accordion åbne/lukke (klik på overskrifter)
+    const headers = document.querySelectorAll(".accordion-header");
+
+    headers.forEach((header) => {
+      header.addEventListener("click", () => {
+        const item = header.parentElement;
+        const content = item.querySelector(".accordion-content");
+        const extra = content.querySelector(".extra_content");
+
+        item.classList.toggle("active");
+        item.classList.toggle("open-bg");
+
+        if (item.classList.contains("active")) {
+          // Hvis ekstraindhold er synligt, vis hele højde
+          if (
+            extra &&
+            extra.style.maxHeight &&
+            extra.style.maxHeight !== "0px"
+          ) {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } else {
+            // Ellers vis kun almindeligt indhold
+            const totalHeight =
+              content.scrollHeight - (extra?.scrollHeight || 0);
+            content.style.maxHeight = totalHeight + "px";
+          }
+        } else {
+          content.style.maxHeight = null;
+        }
+      });
+    });
+
+    // Pil-klik til at åbne/lukke ekstra styles for ALLE sektioner
+    const togglePiles = document.querySelectorAll(".toggle-styles");
+
+    togglePiles.forEach((togglePil) => {
+      togglePil.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const accordionContent = togglePil.closest(".accordion-content");
+        const extraContent = accordionContent.querySelector(".extra_content");
+
+        const isVisible =
+          extraContent.style.maxHeight &&
+          extraContent.style.maxHeight !== "0px";
+
+        if (isVisible) {
+          // Luk ekstraindhold og justér accordion-højde ned
+          extraContent.style.maxHeight = null;
+          accordionContent.style.maxHeight =
+            accordionContent.scrollHeight - extraContent.scrollHeight + "px";
+        } else {
+          // Vis ekstraindhold og udvid accordion-højde
+          extraContent.style.maxHeight = extraContent.scrollHeight + "px";
+          accordionContent.style.maxHeight =
+            accordionContent.scrollHeight + "px";
+        }
+      });
+    });
+  });
+</script>
