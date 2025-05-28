@@ -41,25 +41,26 @@
     --font-p1: "Monument-Regular", sans-serif;
     --size-p1: 16px;
     --size-p2: 12px;
-
-    /* de gamle */
-    /* --font-size-p1: 16pt;
-    --font-size-p2: 12pt;
-    --font-size-h1: 30pt;
-    --font-size-h2: 30pt;
-    --font-size-h3: 20pt;
-    --font-size-h4: 14pt;
-    --font-size-h5: 16pt; */
   }
 }
 
 @font-face {
-  font-family: "Monument-Regular", sans-serif;
-  src: url(/fonts/ABCMonumentGrotesk-Regular-Trial.woff) format("woff");
-  font-weight: 50;
+  font-family: "Monument-Regular";
+  src: url("/fonts/ABCMonumentGrotesk-Regular-Trial.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
 }
+
 @font-face {
-  font-family: "Monument-Medium", sans-serif;
+  font-family: "Monument-Medium";
   src: url(/fonts/ABCMonumentGrotesk-Medium-Trial.woff) format("woff");
-  font-weight: 500;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Monument-Thin";
+  src: url("/fonts/ABCMonumentGrotesk-Thin-Trial.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
 }
