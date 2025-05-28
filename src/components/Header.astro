@@ -1,7 +1,9 @@
 <header>
-  <p class="tekst-top">Vores fælles klædeskab</p>
-  <img class="logostack" src="/img/logostack.png" alt="Logo" />
-  <img class="logo" src="/img/logo.png" alt="Logo" />
+  <div id="header_top">
+    <p>Vores fælles klædeskab</p>
+
+    <img class="logo" src="/img/logo.png" alt="Logo" />
+  </div>
 
   <div id="sideMenu" class="side-menu">
     <div class="menu-label" id="menuButton">menu</div>
@@ -9,7 +11,6 @@
     <a href="#">find dit tøjfællesskab</a>
     <a href="#">kjoleskabet</a>
     <a href="#">spørgsmål og svar</a>
-    <img class="logo-menu" src="/img/logostack.png" alt="Logo" />
   </div>
 
   <script>
@@ -30,21 +31,21 @@
 </header>
 
 <style>
-  .tekst-top {
+  #header_top {
     color: #000;
     text-align: center;
     margin-top: 30px;
     margin-bottom: 0;
   }
 
-  .logostack {
-    display: block;
-    margin: 0 auto;
-    width: 250px;
+  #header_top p {
+    display: none;
   }
 
   .logo {
-    display: none;
+    display: block;
+    margin: auto;
+    margin-top: -20px;
   }
 
   .side-menu {
@@ -78,7 +79,7 @@
   .menu-label {
     position: absolute;
     top: 0;
-    right: 0;
+    right: -4px;
     height: 100%;
     width: 40px;
     background-color: #f3ffde;
@@ -89,16 +90,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--archivo);
+    font-size: 25px;
   }
 
   .side-menu a {
     display: block;
-    padding: 15px 20px;
+    padding: 10px 30px;
+    /* padding: 15px 20px; */
     text-decoration: none;
     color: #000;
-    font-size: 2.5rem;
     border-top: solid 1px #f3ffde;
     border-bottom: solid 1px #f3ffde;
+    font: var(--size-h1) var(--archivo);
   }
 
   .logo-menu {
@@ -106,7 +110,7 @@
   }
 
   .side-menu a:hover {
-    transition: 0.5s ease;
+    transition: 0.2s ease;
     border-top: solid 1px #000;
     border-bottom: solid 1px #000;
   }
@@ -123,11 +127,23 @@
     .logo {
       display: block;
       margin: 0 auto;
-      width: 380px;
+      margin-top: -20px;
+      /* width: 380px; */
     }
 
-    .tekst-top {
-      font-size: 20px;
+    #header_top {
+      color: #000;
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 0;
+    }
+
+    #header_top p {
+      display: none;
+    }
+
+    .side-menu a {
+      font: var(--size-h2) var(--archivo);
     }
   }
 
@@ -136,19 +152,28 @@
       display: none;
     }
 
+    .side-menu a {
+      font: var(--size-h2) var(--archivo);
+    }
+
     .logo {
       position: absolute;
       top: 30px;
       right: 30px;
-      width: 400px;
+      width: 450px;
     }
 
-    .tekst-top {
+    #header_top {
       display: flex;
       justify-content: left;
-      margin-left: 80px;
+      margin-left: 40px;
+      margin-top: -10px;
       font-size: 25px;
       padding-top: 20px;
+      font: var(--size-p1) var(--monument-reg);
     }
+  
+    #header_top p{
+      display: block;
   }
 </style>

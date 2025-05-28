@@ -21,13 +21,13 @@
   --size-p2: 16px;
 
   /* De gamle */
-  --font-size-p1: 20pt;
+  /* --font-size-p1: 20pt;
   --font-size-p2: 14pt;
   --font-size-h1: 48pt;
   --font-size-h2: 38pt;
   --font-size-h3: 28pt;
   --font-size-h4: 18pt;
-  --font-size-h5: 20pt;
+  --font-size-h5: 20pt; */
 }
 
 @media (max-width: 768px) {
@@ -43,13 +43,13 @@
     --size-p2: 12px;
 
     /* de gamle */
-    --font-size-p1: 16pt;
+    /* --font-size-p1: 16pt;
     --font-size-p2: 12pt;
     --font-size-h1: 30pt;
     --font-size-h2: 30pt;
     --font-size-h3: 20pt;
     --font-size-h4: 14pt;
-    --font-size-h5: 16pt;
+    --font-size-h5: 16pt; */
   }
 }
 
