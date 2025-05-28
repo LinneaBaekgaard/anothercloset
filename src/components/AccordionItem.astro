@@ -32,6 +32,7 @@ const {
     </div>
 
     <div class="extra_content">
+      <div class="opdeler"></div>
       <p>Udvalgte styles fra {title}</p>
 
       <div class="mobile-only">
@@ -67,36 +68,11 @@ const {
     padding-bottom: 15px;
   }
 
-  @media (min-width: 768px) {
-    .mobile-only {
-      display: none;
-    }
-    .desktop-only {
-      display: block;
-    }
-
-    .pil_img {
-      width: 100%;
-      height: auto;
-      margin-top: 10px;
-      margin-right: -110px;
-    }
-
-    .tekst_pil {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-    }
-    .tekst_pil p {
-      width: 400px;
-      margin-right: -90px;
-    }
-
-    .btn_seudvalgte {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+  .extra_content p {
+    display: flex;
+    justify-content: center;
+    font-family: var(--archivo);
+    font-size: var(--size-h3);
   }
 
   .accordion-item {
@@ -153,10 +129,6 @@ const {
     height: auto;
   }
 
-  .extra_content {
-    overflow: hidden;
-  }
-
   .style-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -181,18 +153,42 @@ const {
     margin-top: 20px;
   }
 
-  .extra_content p {
-    font-size: var(--font-size-p2);
-    line-height: var(--line-height-p2);
-    color: var(--text-color);
-    font-family: Archivo, sans-serif;
-    font-weight: 550;
-  }
-
-  /* .opdeler {
+  .opdeler {
     width: 120%;
     height: 1px;
     background-color: black;
     margin: 20px 0;
-  } */
+  }
+
+  @media (min-width: 768px) {
+    .mobile-only {
+      display: none;
+    }
+    .desktop-only {
+      display: block;
+    }
+
+    .pil_img {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+      margin-right: -110px;
+    }
+
+    .tekst_pil {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .tekst_pil p {
+      width: 400px;
+      margin-right: -90px;
+    }
+
+    .btn_seudvalgte {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
 </style>

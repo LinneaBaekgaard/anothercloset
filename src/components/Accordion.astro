@@ -1,11 +1,53 @@
 ---
 import AccordionItem from "./AccordionItem.astro";
 
-const sharedDresses = [
-  { src: "/img/blaa_slaa-om.jpg", label: "Samsøe Samsøe", size: "str. S" },
-  { src: "/img/blaa-jeans.jpg", label: "La Rouge", size: "str. M" },
-  { src: "/img/gul-skjorte.jpg", label: "InWear", size: "str. 40" },
-  { src: "/img/rod-nederdel.jpg", label: "Esmé Studios", size: "str. M" },
+const fredericiaDresses = [
+  { src: "/img/toej-02.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej-01.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej-04.webp", label: "Esmé Studios", size: "str. M" },
+];
+const keaDresses = [
+  { src: "/img/toej2-01.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej2-02.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej2-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej2-04.webp", label: "Esmé Studios", size: "str. M" },
+];
+const lyngbyDresses = [
+  { src: "/img/toej-02.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej-01.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej-04.webp", label: "Esmé Studios", size: "str. M" },
+];
+const nørrebroDresses = [
+  { src: "/img/toej-02.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej-01.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej-04.webp", label: "Esmé Studios", size: "str. M" },
+];
+const ribeDresses = [
+  { src: "/img/toej-02.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej-01.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej-04.webp", label: "Esmé Studios", size: "str. M" },
+];
+const ringkøbingDresses = [
+  { src: "/img/toej-02.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej-01.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej-04.webp", label: "Esmé Studios", size: "str. M" },
+];
+const roskildeDresses = [
+  { src: "/img/toej-02.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej-01.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej-04.webp", label: "Esmé Studios", size: "str. M" },
+];
+const aauDresses = [
+  { src: "/img/toej-02.webp", label: "Samsøe Samsøe", size: "str. S" },
+  { src: "/img/toej-01.webp", label: "La Rouge", size: "str. M" },
+  { src: "/img/toej-03.webp", label: "InWear", size: "str. 40" },
+  { src: "/img/toej-04.webp", label: "Esmé Studios", size: "str. M" },
 ];
 
 const accordionData = [
@@ -13,49 +55,49 @@ const accordionData = [
     title: "Fredericia",
     date: "Torsdag den 22. maj kl. 17.00 - 19.00",
     location: "Cafe Mauritz, Sjællandsgade 33, Fredericia",
-    dresses: sharedDresses,
+    dresses: fredericiaDresses,
   },
   {
     title: "KEA",
     date: "Torsdag den 15. maj kl. 20.00 - 21.30",
     location: "Guldbergsgade 29D, igennem butikken Res Res",
-    dresses: sharedDresses,
+    dresses: keaDresses,
   },
   {
     title: "Lyngby",
     date: "Tirsdag den 20. maj kl. 20.00 - 21.30",
     location: "Kongevejen 61, Kongens Lyngby",
-    dresses: sharedDresses,
+    dresses: lyngbyDresses,
   },
   {
     title: "Nørrebro",
     date: "Torsdag den 22. maj kl. 17.00 - 20.30",
     location: "Guldbergsgade 29D, igennem butikken Res Res",
-    dresses: sharedDresses,
+    dresses: nørrebroDresses,
   },
   {
     title: "Ribe",
     date: "Onsdag den 21. maj kl. 19.00 - 20.30",
     location: "Ribe Pakhus, Rosen Alle 2, Ribe",
-    dresses: sharedDresses,
+    dresses: ribeDresses,
   },
   {
     title: "Ringkøbing",
     date: "Mandag den 24. marts kl. 19.00 - 20.30",
     location: "Hos KLUNS Erichsens Vej 1B",
-    dresses: sharedDresses,
+    dresses: ringkøbingDresses,
   },
   {
     title: "Roskilde",
     date: "Onsdag den 25. juni kl. 20.00 - 21.30",
     location: "Tønsbergvej 70, Roskilde",
-    dresses: sharedDresses,
+    dresses: roskildeDresses,
   },
   {
     title: "AAU København",
     date: "Mandag den 26. maj kl. 11.30 - 13.00",
     location: "Studentertorvet, Frederikskaj 10, 2450 København",
-    dresses: sharedDresses,
+    dresses: aauDresses,
   },
 ];
 ---
