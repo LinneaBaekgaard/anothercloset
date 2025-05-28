@@ -16,7 +16,7 @@ const {
   </button>
 
   <div class="accordion-content">
-    <p>NÆSTE SALON ER:</p>
+    <p class="undertitel">NÆSTE SALON ER:</p>
     <p>{date}<br />{location}</p>
 
     <button class="btn1">modtag invitation</button>
@@ -66,12 +66,12 @@ const {
     text-align: left;
     padding: 1rem;
     padding-left: 2rem;
-    font-size: var(--font-size-h3);
+    font-size: var(--size-h1);
     background: none;
     border: none;
     display: flex;
     justify-content: space-between;
-    font-family: "Monument", sans-serif;
+    font-family: var(--archivo);
     cursor: pointer;
   }
 
@@ -80,7 +80,13 @@ const {
     overflow: hidden;
     transition: max-height 1s ease;
     padding: 0 2rem;
-    font-size: 14pt;
+    font-family: var(--monument-reg);
+    font-size: var(--size-p2);
+  }
+
+  .accordion-content .undertitel {
+    font-family: var(--archivo);
+    font-size: var(--size-h3);
   }
 
   .plus {

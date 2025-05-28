@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../style/global.css";
 ---
 
 <Layout>
@@ -77,6 +78,8 @@ import Footer from "../components/Footer.astro";
 <style>
   .formular {
     padding-top: 20px;
+    font-size: var(--size-p2);
+    font-family: var(--monument-reg);
   }
 
   #box_formular {
@@ -88,7 +91,7 @@ import Footer from "../components/Footer.astro";
     width: 200px;
     background-color: white;
     border: 1px;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 5px 5px;
   }
 
   #button {
@@ -103,24 +106,40 @@ import Footer from "../components/Footer.astro";
     background-color: rgb(255, 205, 248);
   }
   .blivmedlem_body {
-    margin: 50px 50px 0px 85px;
+    margin: 50px 30px 0px 30px;
     padding-bottom: 100px;
   }
 
   ul {
-    margin-left: -20px;
-    list-style-type: circle;
+    margin-left: -27px;
+    line-height: 16px;
+    font-size: var(--size-p2);
+    font-family: var(--monument-med);
   }
 
   h1 {
-    font-size: var(--font-size-h3);
-    line-height: var(--line-height-h1);
-    color: var(--text-color);
+    font-size: var(--size-h3);
+    font-family: var(--archivo);
+  }
+
+  h2 {
+    font-size: var(--size-h2);
+    font-family: var(--archivo);
   }
 
   p {
-    font-size: var(--font-size-p1);
-    line-height: var(--line-height-p1);
-    color: var(--text-color);
+    font-size: var(--size-p1);
+    font-family: var(--monument-reg);
+  }
+
+  @media (min-width: 768px) {
+    .blivmedlem_body {
+      margin: 100px 40px 0px 40px;
+      padding-bottom: 100px;
+    }
+
+    ul {
+      line-height: 20px;
+    }
   }
 </style>
