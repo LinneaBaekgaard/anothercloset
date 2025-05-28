@@ -16,7 +16,7 @@ import "../style/global.css";
         <h2>Konceptet</h2>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Hvor ofte er der saloner?<span>+</span></button
+            >Hvor ofte er der saloner?<span class="plus">+</span></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -30,7 +30,8 @@ import "../style/global.css";
 
         <div class="dropdown">
           <button class="dropdown-header"
-            >Hvad hvis kan komme til en salon?<span>+</span></button
+            >Hvad hvis kan komme til en salon?<span class="plus">+</span
+            ></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -51,8 +52,8 @@ import "../style/global.css";
 
         <div class="dropdown">
           <button class="dropdown-header"
-            >Hvad hvis der ikke er en garderobesalon tæt på, hvor jeg bor?<span
-              >+</span
+            >Hvad hvis der ikke er en garderobesalon tæt på, <br />hvor jeg bor?<span
+              class="plus">+</span
             ></button
           >
           <div class="dropdown-tekst">
@@ -66,7 +67,9 @@ import "../style/global.css";
         </div>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Får jeg mit eget udlånte tøj tilbage igen?<span>+</span></button
+            >Får jeg mit eget udlånte tøj tilbage igen?<span class="plus"
+              >+</span
+            ></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -87,7 +90,9 @@ import "../style/global.css";
         <h2>Betaling</h2>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Kan jeg holde pause med at betale i perioder?<span>+</span></button
+            >Kan jeg holde pause med at betale i perioder?<span class="plus"
+              >+</span
+            ></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -102,7 +107,7 @@ import "../style/global.css";
         <h2>Abonnomentet</h2>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Hvor længe binder man sig?<span>+</span></button
+            >Hvor længe binder man sig?<span class="plus">+</span></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -114,7 +119,8 @@ import "../style/global.css";
         </div>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Hvordan opsiger jeg mit abonnement?<span>+</span></button
+            >Hvordan opsiger jeg mit abonnement?<span class="plus">+</span
+            ></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -133,7 +139,7 @@ import "../style/global.css";
         <h2>Tøjet</h2>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Er der tøj i alle størrelser?<span>+</span></button
+            >Er der tøj i alle størrelser?<span class="plus">+</span></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -152,7 +158,7 @@ import "../style/global.css";
         </div>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Hvilken slags tøj kan man låne?<span>+</span></button
+            >Hvilken slags tøj kan man låne?<span class="plus">+</span></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -169,7 +175,9 @@ import "../style/global.css";
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropdown-header">Hvad med vask?<span>+</span></button>
+          <button class="dropdown-header"
+            >Hvad med vask?<span class="plus">+</span></button
+          >
           <div class="dropdown-tekst">
             <p>
               Du vasker selv det tøj, du låner, og det hjælper os med at holde
@@ -187,7 +195,7 @@ import "../style/global.css";
         </div>
         <div class="dropdown">
           <button class="dropdown-header"
-            >Hvad hvis tøjet går i stykker?<span>+</span></button
+            >Hvad hvis tøjet går i stykker?<span class="plus">+</span></button
           >
           <div class="dropdown-tekst">
             <p>
@@ -224,12 +232,22 @@ import "../style/global.css";
   }
 
   h1 {
-    font-weight: lighter;
+    font: var(--size-h1) var(--archivo);
   }
-
+  h2 {
+    font: var(--size-h2) var(--archivo);
+    margin-bottom: 10px;
+  }
   p {
     margin-bottom: 10px;
     margin-left: 10px;
+  }
+
+  .plus {
+    font-size: 30px;
+    font-family: "Monument-Thin", sans-serif;
+    margin: -10px -10px -10px -10px;
+    padding-left: 10px;
   }
 
   img {
@@ -244,26 +262,38 @@ import "../style/global.css";
 
   .dropdown-header {
     width: 100%;
-    font-size: var(--font-size-p1);
+    font: var(--size-p1) var(--monument-reg);
     background: none;
     border: none;
     display: flex;
     justify-content: space-between;
-    font-family: "Monument", sans-serif;
     cursor: pointer;
     text-align: left;
+    margin-left: -5px;
+    padding-top: 5px;
+  }
+
+  .dropdown-header br {
+    display: block;
   }
 
   .dropdown-tekst {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease;
+    font: var(--size-p2) var(--monument-reg);
+    margin-left: -10px;
+    padding-bottom: 5px;
   }
 
   @media (min-width: 768px) {
     .cluster-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
+    }
+
+    .dropdown-header br {
+      display: none;
     }
 
     .cluster1,
@@ -280,9 +310,18 @@ import "../style/global.css";
       margin-left: 80px;
     }
 
+    .plus {
+      font-size: 40px;
+      font-family: "Monument-Thin", sans-serif;
+      margin: 0 -10px 0 0;
+    }
+
     .cluster-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
+    }
+    .dropdown-header {
+      line-height: 28px;
     }
 
     .cluster1,
