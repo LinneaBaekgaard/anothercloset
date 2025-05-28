@@ -10,12 +10,15 @@
   /* typography */
 
   /* De nye */
-  --size-h1: 40pt;
-  --font-h1: "archivo-condensed", sans-serif;
+  --size-h1: 48px;
+  --size-h2: 34px;
+  --size-h3: 25px;
+  --archivo: "archivo-condensed", sans-serif;
 
-  --size-p1: 18pt;
-  --font-p1: "Monument-Regular", sans-serif;
-  --line-p1: 22pt;
+  --monument-reg: "Monument-Regular", sans-serif;
+  --monument-med: "Monument-Medium", sans-serif;
+  --size-p1: 20px;
+  --size-p2: 16px;
 
   /* De gamle */
   --font-size-p1: 20pt;
@@ -25,21 +28,19 @@
   --font-size-h3: 28pt;
   --font-size-h4: 18pt;
   --font-size-h5: 20pt;
-
-  /*line-height*/
-  --line-height-h1: 52pt;
-  --line-height-p2: 15pt;
 }
 
 @media (max-width: 768px) {
   :root {
     /* de nye */
-    --size-h1: 25pt;
+    --size-h1: 34px;
+    --size-h2: 25px;
+    --size-h3: 18px;
     --font-h1: "archivo-condensed", sans-serif;
 
-    --size-p1: 12pt;
     --font-p1: "Monument-Regular", sans-serif;
-    --line-p1: 16pt;
+    --size-p1: 16px;
+    --size-p2: 12px;
 
     /* de gamle */
     --font-size-p1: 16pt;
