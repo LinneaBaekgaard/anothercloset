@@ -1,66 +1,102 @@
 ---
-const dresses = [
-  {
-    src: "/img/orangecutout.png",
-    label: "Malene Birger kjole",
-    size: "str. 38",
-  },
-  {
-    src: "/img/kjole2.png",
-    label: "Anden kjole",
-    size: "str. 40",
-  },
-  {
-    src: "/img/kjole3.png",
-    label: "Tredje kjole",
-    size: "str. 36",
-  },
-];
+const {
+  dresses = [],
+  mode = "slider", // "slider" eller "grid"
+  imageWidth = "60%",
+  class: customClass = "",
+} = Astro.props;
 ---
 
-<div class="slider-wrapper">
-  <button class="nav left" onclick="previousSlide()">&#10094;</button>
+{
+  mode === "slider" ? (
+    <div class={`slider-wrapper ${customClass}`}>
+      <button class="nav left">
+        <img src="/img/Pil-left.png" alt="Forrige" />
+      </button>
 
-  <div class="slider">
-    {
-      dresses.map((dress, index) => (
-        <div
-          class="slide"
-          style={`display: ${index === 0 ? "block" : "none"}`}
-          data-index={index}
-        >
-          <img src={dress.src} alt={dress.label} class="dress-image" />
+      <div class="slider">
+        {dresses.map((dress, index) => (
+          <div
+            class={`slide ${index === 0 ? "active-slide" : "inactive-slide"}`}
+            data-index={index}
+          >
+            <img
+              src={dress.src}
+              alt={dress.label}
+              class="dress-image"
+              style={`width: ${imageWidth}`}
+            />
+            <div class="text-container">
+              <span class="label">{dress.label}</span>
+              <span class="size">{dress.size}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button class="nav right">
+        <img src="/img/Pil-right.png" alt="Næste" />
+      </button>
+    </div>
+  ) : (
+    <div class={`grid-view ${customClass}`}>
+      {dresses.map((dress) => (
+        <div class="grid-item">
+          <img
+            src={dress.src}
+            alt={dress.label}
+            class="dress-image"
+            style={`width: ${imageWidth}`}
+          />
           <div class="text-container">
             <span class="label">{dress.label}</span>
             <span class="size">{dress.size}</span>
           </div>
         </div>
-      ))
-    }
-  </div>
+      ))}
+    </div>
+  )
+}
 
-  <button class="nav right" onclick="nextSlide()">&#10095;</button>
-</div>
+<script is:client type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".slider-wrapper").forEach((sliderWrapper) => {
+      const slides = sliderWrapper.querySelectorAll(".slide");
+      let currentIndex = 0;
 
-<script type="module" is:inline>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll(".slide");
+      const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+          slide.style.display = i === index ? "block" : "none";
+        });
+      };
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? "block" : "none";
+      const nextSlide = () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      };
+
+      const prevSlide = () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      };
+
+      showSlide(currentIndex);
+
+      sliderWrapper
+        .querySelector(".nav.right")
+        ?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          nextSlide();
+        });
+
+      sliderWrapper
+        .querySelector(".nav.left")
+        ?.addEventListener("click", (e) => {
+          e.stopPropagation();
+          prevSlide();
+        });
     });
-  }
-
-  window.nextSlide = () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  };
-
-  window.previousSlide = () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  };
+  });
 </script>
 
 <style>
@@ -81,10 +117,16 @@ const dresses = [
 
   .slide {
     width: 100%;
+    margin-top: 20px;
+    display: none;
+  }
+
+  .active-slide {
+    display: block;
   }
 
   .dress-image {
-    width: 60%;
+    transition: transform 0.3s ease;
   }
 
   .text-container {
@@ -98,6 +140,8 @@ const dresses = [
     font-weight: bold;
     padding: 5px;
     border-radius: 1rem;
+    width: 200px;
+    margin: 0 auto;
   }
 
   .size {
@@ -111,21 +155,37 @@ const dresses = [
   }
 
   .nav {
-    position: absolute;
-    top: 35%;
     background-color: transparent;
     border: none;
-    color: #6d6d6d;
-    font-size: 20px;
     cursor: pointer;
-    z-index: 3;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
   }
 
   .nav.left {
-    left: 10%;
+    left: 5%;
   }
 
   .nav.right {
-    right: 10%;
+    right: 5%;
+  }
+
+  .nav img {
+    width: 10px;
+    height: auto;
+  }
+
+  .grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin-top: 1rem;
+  }
+
+  .grid-item img {
+    width: 100%;
+    border-radius: 10px;
   }
 </style>
