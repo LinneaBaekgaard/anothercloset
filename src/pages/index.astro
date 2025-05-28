@@ -16,7 +16,13 @@ const sharedDresses = [
 
 <Layout>
   <Header />
-  <img class="herovideo" src="/img/herovideo.png" alt="video" />
+
+  <img class="herovideo" src="/img/herovideo.png" alt="billede" />
+
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="/img/anothercloset.mp4" type="video/mp4" />
+    Din browser understøtter ikke video.
+  </video>
 
   <div class="hero-container">
     <p class="hero-tekst">
@@ -28,7 +34,7 @@ const sharedDresses = [
   </div>
 
   <div class="tilmeld-overskrift">
-    <p>Sådan fungerer det:</p>
+    <h1>Sådan fungerer det:</h1>
   </div>
 
   <div class="dropdown">
@@ -61,7 +67,7 @@ const sharedDresses = [
   <div class="dropdown">
     <div class="dropdown-header">
       <span class="dropdown-number">3</span>
-      <span class="dropdown-titel">Find tre strykker tøj til klædeskabet</span>
+      <span class="dropdown-titel">Find tre strykker tøj</span>
     </div>
     <div class="dropdown-tekst">
       <p>
@@ -72,7 +78,7 @@ const sharedDresses = [
     </div>
   </div>
 
-  <div class="dropdown">
+  <div class="dropdown-sidst">
     <div class="dropdown-header">
       <span class="dropdown-number">4</span>
       <span class="dropdown-titel">Kom til tøjsalonen</span>
@@ -98,6 +104,8 @@ const sharedDresses = [
   <div class="rulletekst">
     <p>
       Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU –
+      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU -
+      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU –
       Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU
     </p>
   </div>
@@ -107,7 +115,8 @@ const sharedDresses = [
       “Another Closet bliver en mulighed for at lege og eksperimentere med tøj i
       et sjovt, rummeligt og bæredygtigt fællesskab uden at skulle løbe rundt i
       tilværelsen for at have penge nok til det hele.”<br />
-      <br /> - Maria, Fredericia
+      <br />
+      <div class="citat-navn"><b>- Maria, Fredericia</b></div>
     </p>
 
     <button>find dit tøjfællesskab</button>
@@ -119,7 +128,7 @@ const sharedDresses = [
 
   <section class="fest-container">
     <div>
-      <h1>Lej tøj til den helt specielle anledning</h1>
+      <h1 class="fest-overskrift">Lej tøj til den helt specielle anledning</h1>
       <p class="fest-tekst">
         Som medlem kan du leje festkjoler til 350 kr pr styk. Tilmeld dig
         Another Closet, og gå på opdagelse i vores fælles cirkulære klædeskab
@@ -138,7 +147,6 @@ const sharedDresses = [
   .medlem-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
     margin-bottom: 40px;
   }
 
@@ -148,10 +156,16 @@ const sharedDresses = [
     margin-bottom: 40px;
   }
 
+  .hero-video {
+    display: none;
+  }
+
   .hero-tekst {
-    font-size: var(--font-size-p1);
     text-align: center;
     margin: 0 20px 20px 20px;
+  }
+  .hero-tekst p {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
 
   button {
@@ -169,12 +183,12 @@ const sharedDresses = [
     background-color: #f3ffde;
     color: #000;
     padding: 10px;
-    font-size: var(--font-size-p1);
     border-top: solid 1px #000;
   }
 
-  .tilmeld-overskrift p {
-    margin-left: 30px;
+  .tilmeld-overskrift h1 {
+    font: var(--size-h2) var(--archivo);
+    margin: -5px 0 -5px 30px;
   }
 
   .dropdown {
@@ -182,18 +196,35 @@ const sharedDresses = [
     border-top: 1px solid black;
   }
 
+  .dropdown-sidst {
+    width: 100%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
   .dropdown-header {
-    font-size: var(--font-size-p1);
+    font: var(--size-h2) var(--archivo);
     background: none;
     border: none;
     display: flex;
     cursor: pointer;
   }
 
+  .dropdown-header:hover {
+    background-color: #f3ffde;
+  }
+
   .dropdown-tekst {
     max-height: 0;
     overflow: hidden;
     transition: max-height 1s ease;
+    font: var(--size-p1) var(--monument-reg);
+    margin-left: 85px;
+    width: 600px;
+  }
+
+  .dropdown-tekst p {
+    margin-top: -2px;
   }
 
   .dropdown-number {
@@ -205,8 +236,8 @@ const sharedDresses = [
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 15px;
-    margin: 5px 15px 5px 30px;
+    font: var(--size-h2) var(--archivo);
+    margin: 12px 15px 10px 30px;
   }
 
   .dropdown-titel {
@@ -239,9 +270,11 @@ const sharedDresses = [
 
   .rulletekst p {
     display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-left: 100%;
-    animation: scroll-text 20s linear infinite;
-    font-size: 40px;
+    animation: scroll-text 40s linear infinite;
+    font: var(--size-h1) var(--archivo);
   }
 
   .citat-container {
@@ -253,9 +286,14 @@ const sharedDresses = [
   }
 
   .citat {
-    font-size: var(--font-size-p1);
-    margin: 30px;
+    font: var(--size-h3) var(--archivo);
+    margin: 30px 40px 0 40px;
     text-align: center;
+  }
+
+  .citat-navn {
+    font: var(--size-p1) var(--monument-reg);
+    margin-bottom: 40px;
   }
 
   .cutoutbillede {
@@ -269,7 +307,13 @@ const sharedDresses = [
     font-size: var(--font-size-p1);
   }
 
+  .fest-overskrift {
+    font: var(--size-h2) var(--archivo);
+    margin-bottom: 20px;
+  }
+
   .fest-tekst {
+    font: var(--size-p1) var(--monument-reg);
     margin-bottom: 40px;
   }
 
@@ -290,32 +334,58 @@ const sharedDresses = [
   }
 
   @media (min-width: 768px) {
-    .herovideo {
+    .hero-video {
       width: 100%;
       height: auto;
       margin-left: 0px;
       margin-top: 30px;
+      display: block;
+    }
+
+    .herovideo {
+      display: none;
+    }
+
+    .dropdown-number {
+      background-color: #3b7d3c;
+      color: rgb(0, 0, 0);
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: var(--size-h2) var(--archivo);
+      margin: 17px 15px 10px 30px;
     }
 
     .btn2 {
       margin-bottom: 60px;
     }
+
+    .citat {
+      width: 600px;
+    }
   }
 
   @media (min-width: 1024px) {
-    .herovideo {
-      margin-top: 120px;
-    }
-
     .hero-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       margin-bottom: 40px;
     }
 
+    .hero-video {
+      display: block;
+    }
+
     .hero-tekst {
       grid-column: 1 / 3;
       text-align: left;
+    }
+
+    .dropdown-number {
+      margin: 15px 15px 5px 30px;
     }
 
     .btn1 {
