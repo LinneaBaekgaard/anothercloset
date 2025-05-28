@@ -30,7 +30,7 @@ const sharedDresses = [
       opdagelse i vores fælles cirkulære klædeskab for 149 kr. om måneden, og
       vær med til at skabe en mere bæredygtig tøjkultur.
     </p>
-    <button class="btn1">bliv medlem</button>
+    <a href="blivmedlem" class="btn1">bliv medlem</a>
   </div>
 
   <div class="tilmeld-overskrift">
@@ -103,10 +103,11 @@ const sharedDresses = [
 
   <div class="rulletekst">
     <p>
-      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU –
-      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU -
-      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU –
-      Fredericia – KEA – Lyngy – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU
+      Fredericia – KEA – Lyngby – Nørrebro – Ribe – Ringkøbing – Roskilde – AAU
+      – Fredericia – KEA – Lyngby – Nørrebro – Ribe – Ringkøbing – Roskilde –
+      AAU – Fredericia – KEA – Lyngby – Nørrebro – Ribe – Ringkøbing – Roskilde
+      – AAU – Fredericia – KEA – Lyngby – Nørrebro – Ribe – Ringkøbing –
+      Roskilde – AAU
     </p>
   </div>
 
@@ -119,7 +120,7 @@ const sharedDresses = [
       <div class="citat-navn"><b>- Maria, Fredericia</b></div>
     </p>
 
-    <button>find dit tøjfællesskab</button>
+    <a href="toejfaellesskab" class="btn2">find dit tøjfællesskab</a>
   </section>
 
   <div class="cutoutbillede">
@@ -127,14 +128,15 @@ const sharedDresses = [
   </div>
 
   <section class="fest-container">
-    <div>
+    <div class="tekst">
       <h1 class="fest-overskrift">Lej tøj til den helt specielle anledning</h1>
       <p class="fest-tekst">
-        Som medlem kan du leje festkjoler til 350 kr pr styk. Tilmeld dig
-        Another Closet, og gå på opdagelse i vores fælles cirkulære klædeskab
-        for 149 kr. om måneden.
+        Som medlem af Another Closet kan du leje festtøj i en uge til til 350 kr
+        pr styk. Se vores udvalg af smukt festtøj herunder, se hvad dit lokale
+        klædeskab har at byde på, og skip tøjkrisen til den næste vigtige
+        begivenhed.
       </p>
-      <button class="btn2">se vores udvalg af festtøj</button>
+      <a href="kjoler" class="btn3">se vores udvalg af festtøj</a>
     </div>
     <div class="slider">
       <BilledeSlider dresses={sharedDresses} mode="slider" />
@@ -144,15 +146,12 @@ const sharedDresses = [
 </Layout>
 
 <style>
-  .medlem-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-  }
-
   .herovideo {
     width: 100%;
     height: auto;
+    margin-bottom: 40px;
+  }
+  .medlem-container {
     margin-bottom: 40px;
   }
 
@@ -168,15 +167,24 @@ const sharedDresses = [
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   }
 
-  button {
+  .btn1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn1,
+  .btn2,
+  .btn3 {
     background-color: var(--orange-color);
     color: #000;
     border: none;
     padding: 10px 20px;
-    font-size: var(--font-size-p1);
+    font: var(--archivo) var(--font-size-p1);
     cursor: pointer;
     border-radius: 30px;
     margin-bottom: 40px;
+    text-decoration: none;
+    display: inline-block;
   }
 
   .tilmeld-overskrift {
@@ -273,7 +281,7 @@ const sharedDresses = [
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 100%;
-    animation: scroll-text 40s linear infinite;
+    animation: scroll-text 60s linear infinite;
     font: var(--size-h1) var(--archivo);
   }
 
@@ -309,19 +317,12 @@ const sharedDresses = [
 
   .fest-overskrift {
     font: var(--size-h2) var(--archivo);
-    margin-bottom: 20px;
+    margin: 0 0 20px 30px;
   }
 
   .fest-tekst {
     font: var(--size-p1) var(--monument-reg);
-    margin-bottom: 40px;
-  }
-
-  .btn1,
-  .btn2 {
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 40px;
+    margin: 0 10px 40px 30px;
   }
 
   @keyframes scroll-text {
@@ -347,24 +348,17 @@ const sharedDresses = [
     }
 
     .dropdown-number {
-      background-color: #3b7d3c;
-      color: rgb(0, 0, 0);
-      border-radius: 50%;
       width: 35px;
       height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font: var(--size-h2) var(--archivo);
       margin: 17px 15px 10px 30px;
-    }
-
-    .btn2 {
-      margin-bottom: 60px;
     }
 
     .citat {
       width: 600px;
+    }
+
+    .fest-tekst {
+      margin-right: 60px;
     }
   }
 
@@ -388,10 +382,6 @@ const sharedDresses = [
       margin: 15px 15px 5px 30px;
     }
 
-    .btn1 {
-      grid-column: 3;
-    }
-
     .citat-container {
       display: flex;
       flex-direction: column;
@@ -399,17 +389,26 @@ const sharedDresses = [
       padding: 40px 250px 30px 250px;
     }
 
+    .cutoutbillede {
+      height: 200px;
+    }
+
     .fest-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-row: 1fr;
     }
 
-    .fest-tekst {
+    .tekst {
+      margin: 80px;
       grid-column: 2/3;
+      grid-row: 1/2;
     }
 
     .slider {
+      margin: 40px;
       grid-column: 1/2;
+      grid-row: inherit;
     }
   }
 </style>
