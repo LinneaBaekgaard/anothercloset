@@ -6,7 +6,8 @@ import KjolerCard from "../components/KjolerCard.astro";
 import "../style/global.css";
 
 const curl = "https://ngzpzxuvxcobhkrwrgpi.supabase.co/rest/v1/kjole?select=*";
-const apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nenB6eHV2eGNvYmhrcndyZ3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjQ1MjgsImV4cCI6MjA2MjY0MDUyOH0.INYStzoZSVH73X4YGeNOih21F7NaJX1O57r9C3CAxww";
+const apikey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nenB6eHV2eGNvYmhrcndyZ3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjQ1MjgsImV4cCI6MjA2MjY0MDUyOH0.INYStzoZSVH73X4YGeNOih21F7NaJX1O57r9C3CAxww";
 const options = {
   headers: {
     apikey,
@@ -27,8 +28,11 @@ console.log(data);
       <h2 class="headline">Lej tøj til den helt <br />specielle anledning</h2>
 
       <p class="description">
-        Som medlem af Another Closet kan du leje festtøj i en uge til til 350 kr pr styk. Det kræver bare at du kan hente tøjet selv, og bringe det tilbage i god stand efter 7 dage. Se vores udvalg af smukt festtøj herunder, se hvad dit lokale
-        klædeskab har at byde på, og skip tøjkrisen til den næste vigtige begivenhed.
+        Som medlem af Another Closet kan du leje festtøj i en uge til til 350 kr
+        pr styk. Det kræver bare at du kan hente tøjet selv, og bringe det
+        tilbage i god stand efter 7 dage. Se vores udvalg af smukt festtøj
+        herunder, se hvad dit lokale klædeskab har at byde på, og skip tøjkrisen
+        til den næste vigtige begivenhed.
       </p>
 
       <div class="arrow-down">
@@ -50,7 +54,6 @@ console.log(data);
   <div class="cards">
     {data.map((kjole) => <KjolerCard data={kjole} />)}
   </div>
-  <!-- {data.map((kjole) => <KjolerCard data={kjole} />)} -->
   <Footer />
 </Layout>
 
@@ -119,7 +122,7 @@ console.log(data);
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    margin-top: 40px;
+    margin: 40px 0 80px 0;
   }
 
   @media (min-width: 768px) {
