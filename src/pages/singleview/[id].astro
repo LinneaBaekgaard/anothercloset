@@ -1,0 +1,231 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import "../../style/global.css";
+
+export async function getStaticPaths() {
+  const curl =
+    "https://ngzpzxuvxcobhkrwrgpi.supabase.co/rest/v1/kjole?select=*";
+
+  const apikey =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nenB6eHV2eGNvYmhrcndyZ3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcwNjQ1MjgsImV4cCI6MjA2MjY0MDUyOH0.INYStzoZSVH73X4YGeNOih21F7NaJX1O57r9C3CAxww";
+
+  const options = {
+    headers: {
+      apikey: apikey,
+    },
+  };
+
+  const response = await fetch(curl, options);
+  const data = await response.json();
+
+  return data.map((data) => {
+    return {
+      params: { id: data.id },
+      props: { data },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const { data } = Astro.props;
+---
+
+<Layout>
+  <Header />
+  <main>
+    <div class="back-link">
+      <a href="/kjoler">
+        <span class="arrow">&#8592;</span> Gå tilbage til udvalg
+      </a>
+    </div>
+
+    <section class="container1">
+      <div class="grid1">
+        <div class="image-container">
+          <img src={"/img/" + data.img} alt={data.imgdescr} />
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="details">
+          <h2>Str. {data.size}</h2>
+          <h1>{data.name}</h1>
+          <h3>{data.brand}</h3>
+          <p class="description">{data.description}</p>
+
+          <div class="info">
+            <p>Stand:<br />{data.stand}</p>
+            <p class="vask">Vask:<br />{data.vask}</p>
+          </div>
+
+          <a class="availability-btn" href="#">se tilgængelighed</a>
+        </div>
+      </div>
+    </section>
+
+    <h1 class="udvalg-overskrift">Se hele udvalget</h1>
+
+    <section class="udvalg">
+      <a href="/singleview/1">
+        <img src="/img/strikket_saet.webp" alt="billede af person med sæt på" />
+        <div>
+          <span class="name">Strikket tofarvet sæt</span><br />
+          <span class="size">str. M</span>
+        </div>
+      </a>
+
+      <a href="/singleview/7">
+        <img src="/img/pyamas.webp" alt="billede af person med pyamas på" />
+        <div>
+          <span class="name">Sort pyjamassæt med fjer</span><br />
+          <span class="size">str. L</span>
+        </div>
+      </a>
+
+      <a href="/singleview/5">
+        <img
+          src="/img/groen_kjole.webp"
+          alt="billede af person med grøn kjole på"
+        />
+        <div>
+          <span class="name">Grøn kjole med knapper</span><br />
+          <span class="size">str. 38</span>
+        </div>
+      </a>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    margin: 50px 5px 60px 10px;
+    font-family: "Monument-Regular", sans-serif;
+  }
+
+  .back-link a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .arrow {
+    font-size: 20px;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    margin-left: 10px;
+  }
+
+  .details h1 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .details h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #222;
+    margin-bottom: 60px;
+  }
+
+  .info p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-top: 1px solid #979797;
+    padding-top: 10px;
+    width: 80%;
+  }
+
+  .vask {
+    border-bottom: 1px solid #979797;
+    padding-bottom: 14px;
+  }
+
+  .availability-btn {
+    background-color: #ff4d00;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  .container1 {
+    padding-bottom: 60px;
+    border-bottom: solid 1px #000000;
+  }
+
+  .udvalg-overskrift {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 40px;
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+    margin: 40px 0 15px 0;
+  }
+
+  .udvalg a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .size,
+  .name {
+    background-color: #cd59ff;
+    color: black;
+    padding: 3px 10px;
+    border-radius: 15px;
+  }
+
+  @media (min-width: 768px) {
+    .back-link {
+      margin-left: 35px;
+    }
+
+    .container1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid1 {
+      width: 60%;
+      justify-self: end;
+    }
+
+    .grid2 {
+      padding-top: 30px;
+      margin-right: 300px;
+    }
+  }
+</style>
