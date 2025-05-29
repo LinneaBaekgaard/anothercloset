@@ -11,6 +11,21 @@ const sharedDresses = [
     label: "Malene Birger Kjole",
     size: "str. 38",
   },
+  {
+    src: "/img/kjolecut1.png",
+    label: "Malene Birger Kjole",
+    size: "str. 38",
+  },
+  {
+    src: "/img/gallakjole2-cutout.png",
+    label: "Malene Birger Kjole",
+    size: "str. 38",
+  },
+  {
+    src: "/img/groencutout.png",
+    label: "Malene Birger Kjole",
+    size: "str. 38",
+  },
 ];
 ---
 
@@ -445,7 +460,7 @@ const sharedDresses = [
       const content = item.querySelector(".dropdown-tekst");
 
       item.classList.toggle("active");
-      header.classList.toggle("open-bg"); // <-- Tilføj denne linje!
+      header.classList.toggle("open-bg");
 
       if (item.classList.contains("active")) {
         content.style.maxHeight = content.scrollHeight + "px";
