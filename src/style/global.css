@@ -17,6 +17,8 @@
 
   --monument-reg: "Monument-Regular", sans-serif;
   --monument-med: "Monument-Medium", sans-serif;
+  --monument-bold: "Monument-Bold", sans-serif;
+  --monument-thin: "Monument-Thin", sans-serif;
   --size-p1: 20px;
   --size-p2: 16px;
 
@@ -62,5 +64,12 @@
   font-family: "Monument-Thin";
   src: url("/fonts/ABCMonumentGrotesk-Thin-Trial.woff") format("woff");
   font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Monument-Bold";
+  src: url(/fonts/ABCMonumentGrotesk-Bold-Trial.woff) format("woff");
+  font-weight: 600;
   font-style: normal;
 }

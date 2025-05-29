@@ -11,13 +11,21 @@ import "../style/global.css";
   <Header />
   <main>
     <div class="hero">
-      <h1>Find dit lokale fællesskab</h1>
-      <p>
-        Kom med til vores næste tøjbytte-salon! Her mødes medlemmer for at bytte
-        tøj, hygge sig og nyde et glas vin. Der opstår en helt særlig stemning,
-        når kvinder i alle aldre og størrelser prøver lækkert tøj sammen! Det er
-        gratis og uforpligtende at tage til tøjsalon.
-      </p>
+      <div class="hero-content">
+        <div class="hero-header">
+          <h1>Find dit lokale fællesskab</h1>
+          <p>
+            Kom med til vores næste tøjbytte-salon! Her mødes medlemmer for at
+            bytte tøj, hygge sig og nyde et glas vin. Der opstår en helt særlig
+            stemning, når kvinder i alle aldre og størrelser prøver lækkert tøj
+            sammen! Det er gratis og uforpligtende at tage til tøjsalon.
+          </p>
+        </div>
+
+        <div class="pc_img">
+          <img src="/img/toejfaellesskab.png" alt="" />
+        </div>
+      </div>
     </div>
     <Accordion />
     <section class="toej_section">
@@ -38,6 +46,7 @@ import "../style/global.css";
           tøj med hjem hver gang. Du kan altid finde de kommende salondatoer på
           vores hjemmeside.
         </p>
+        <br />
         <p>
           Vi er typisk mellem 15 og 30 mennesker til hver salon. Nogle medlemmer
           bliver i et par timer for at hygge og prøve tøj, mens andre kun kigger
@@ -51,6 +60,9 @@ import "../style/global.css";
 </Layout>
 
 <style>
+  br {
+    display: none;
+  }
   .hero {
     margin: 50px 0;
     padding: 0 20px 0 2rem;
@@ -68,7 +80,7 @@ import "../style/global.css";
   }
 
   .toej_section {
-    margin: 50px 0;
+    margin: 100px 0;
   }
 
   .toej-text {
@@ -104,19 +116,103 @@ import "../style/global.css";
     height: auto;
   }
 
+  .pc_img {
+    display: none;
+  }
+
   @media (min-width: 768px) {
-    .toej-imgs {
-      align-items: flex-start;
-      margin-left: 2rem;
+    br {
+      display: block;
+    }
+    .toej_section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
-    .toejsalon img,
+    .toej-imgs {
+      max-width: 500px; /* stadig begrænset bredde, men fleksibelt */
+      width: 100%; /* fyld containeren */
+      box-sizing: border-box;
+    }
+
+    .toejraekke {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .toejsalon {
+      display: flex;
+      justify-content: flex-end;
+    }
+
     .toejraekke img {
+      width: 80%;
+      height: auto;
       margin: 0;
+    }
+
+    .toejsalon img {
+      width: 90%;
+      height: auto;
+      margin: 0;
+    }
+
+    .toej-text {
+      padding: 0 2rem;
+      margin: 0;
+    }
+    .toej-text p {
+      margin: 0;
+      font-family: var(--monument-reg);
+      font-size: var(--size-p1);
     }
 
     .hero p {
       margin-right: 280px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero p {
+      max-width: 530px;
+      margin-right: 0;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      margin-top: 150px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .hero-header h1 {
+      margin: 0;
+    }
+
+    .pc_img {
+      display: block;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 40px;
+    }
+    .pc_img img {
+      width: 60%;
+      height: auto;
+      margin-top: 0;
+    }
+
+    .toej-text {
+      padding: 0;
+      margin: 0;
+    }
+      margin: 0;
     }
   }
 </style>
