@@ -219,7 +219,7 @@ const sharedDresses = [
     cursor: pointer;
   }
 
-  .dropdown-header:hover {
+  .dropdown-header.open-bg {
     background-color: var(--yellow-color);
   }
 
@@ -445,6 +445,7 @@ const sharedDresses = [
       const content = item.querySelector(".dropdown-tekst");
 
       item.classList.toggle("active");
+      header.classList.toggle("open-bg"); // <-- Tilføj denne linje!
 
       if (item.classList.contains("active")) {
         content.style.maxHeight = content.scrollHeight + "px";
