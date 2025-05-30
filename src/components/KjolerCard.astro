@@ -1,12 +1,13 @@
 ---
 const { data } = Astro.props;
+import "../style/global.css";
 ---
 
 <article class="kjoler-card">
   <a href={`../singleview/${data.id}`}>
     <img src={"/img/" + data.img} alt={data.imgdescr} />
     <p>
-      <span class="name">{data.name}</span><br /><span class="size"
+      <span class="name">{data.brand}</span><br /><span class="size"
         >str. {data.size}</span
       >
     </p>
@@ -22,6 +23,7 @@ const { data } = Astro.props;
     width: 100%;
     margin: 10px 0;
   }
+
   img {
     height: auto;
     width: 90%;
@@ -29,8 +31,9 @@ const { data } = Astro.props;
 
   .size,
   .name {
-    background-color: #cd59ff;
-    color: black;
+    background-color: var(--purple-color);
+    font-family: var(--monument-reg);
+    font-size: var(--size-h3);
     padding: 3px 10px;
     border-radius: 15px;
   }

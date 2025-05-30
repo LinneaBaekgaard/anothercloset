@@ -63,7 +63,6 @@ console.log(data);
     margin: 0 auto;
     padding: 0;
     text-align: center;
-    font-family: "Monument-Regular", sans-serif;
   }
   .discoball {
     margin-bottom: 40px;
@@ -74,16 +73,13 @@ console.log(data);
     object-fit: contain;
   }
   .headline {
-    font-size: 28px;
-    line-height: 1.4;
-    font-weight: 300;
+    font: var(--size-h1) var(--archivo);
     margin-bottom: 30px;
     text-align: left;
   }
   .description {
-    font-size: 14px;
+    font: var(--size-p2) var(--monument-reg);
     line-height: 1.7;
-    color: #222;
     max-width: 500px;
     text-align: left;
   }
@@ -96,20 +92,20 @@ console.log(data);
     margin: 0 55px;
   }
   .udvalg-headline {
+    font: var(--size-h1) var(--archivo);
     text-align: center;
     padding: 40px 20px 10px;
-    font-size: 32px;
-    font-weight: 300;
     margin-bottom: 30px;
   }
   .udvalg-links {
+    font-family: var(--monument-reg);
+    font-size: var(--size-h3);
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
   }
   .udvalg-links a {
-    font-weight: 500;
     color: black;
     text-decoration: none;
     border-bottom: 1px solid black;
@@ -176,12 +172,10 @@ console.log(data);
     }
     .udvalg-links {
       justify-content: left;
-      font-size: 25px;
       gap: 50px;
       margin-left: 80px;
     }
     .udvalg-headline {
-      font-size: 48px;
       padding: 0 20px 10px;
     }
     .cards {
