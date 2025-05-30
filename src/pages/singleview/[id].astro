@@ -52,12 +52,14 @@ const { data } = Astro.props;
         <div class="details">
           <h2>Str. {data.size}</h2>
           <h1>{data.name}</h1>
-          <h3>{data.brand}</h3>
+          <h3 class="brand">{data.brand}</h3>
           <p class="description">{data.description}</p>
 
           <div class="info">
-            <p>Stand:<br />{data.stand}</p>
-            <p class="vask">Vask:<br />{data.vask}</p>
+            <p><span class="stand">Stand:</span><br />{data.stand}</p>
+            <p class="border-vask">
+              <span class="vask">Vask:</span><br />{data.vask}
+            </p>
           </div>
 
           <a class="availability-btn" href="#">se tilgængelighed</a>
@@ -68,32 +70,54 @@ const { data } = Astro.props;
     <h1 class="udvalg-overskrift">Se hele udvalget</h1>
 
     <section class="udvalg">
-      <a href="/singleview/1">
-        <img src="/img/strikket_saet.webp" alt="billede af person med sæt på" />
-        <div>
-          <span class="name">Strikket tofarvet sæt</span><br />
-          <span class="size">str. M</span>
-        </div>
-      </a>
+      <section>
+        <a href="/singleview/1">
+          <img
+            src="/img/strikket_saet.webp"
+            alt="billede af person med sæt på"
+          />
+          <div>
+            <span class="name">Hosbjerg</span><br />
+            <span class="size">str. M</span>
+          </div>
+        </a>
+      </section>
 
-      <a href="/singleview/7">
-        <img src="/img/pyamas.webp" alt="billede af person med pyamas på" />
-        <div>
-          <span class="name">Sort pyjamassæt med fjer</span><br />
-          <span class="size">str. L</span>
-        </div>
-      </a>
+      <section>
+        <a href="/singleview/7">
+          <img src="/img/pyamas.webp" alt="billede af person med pyamas på" />
+          <div>
+            <span class="name">Sleeper</span><br />
+            <span class="size">str. L</span>
+          </div>
+        </a>
+      </section>
 
-      <a href="/singleview/5">
-        <img
-          src="/img/groen_kjole.webp"
-          alt="billede af person med grøn kjole på"
-        />
-        <div>
-          <span class="name">Grøn kjole med knapper</span><br />
-          <span class="size">str. 38</span>
-        </div>
-      </a>
+      <section>
+        <a href="/singleview/5">
+          <img
+            src="/img/groen_kjole.webp"
+            alt="billede af person med grøn kjole på"
+          />
+          <div>
+            <span class="name">Ganni</span><br />
+            <span class="size">str. 38</span>
+          </div>
+        </a>
+      </section>
+
+      <section>
+        <a href="/singleview/3">
+          <img
+            src="/img/graa_kjole.webp"
+            alt="billede af person med grøn kjole på"
+          />
+          <div>
+            <span class="name">Vera Wang</span><br />
+            <span class="size">str. S</span>
+          </div>
+        </a>
+      </section>
     </section>
   </main>
   <Footer />
@@ -102,13 +126,13 @@ const { data } = Astro.props;
 <style>
   main {
     margin: 50px 5px 60px 10px;
-    font-family: "Monument-Regular", sans-serif;
   }
 
   .back-link a {
     text-decoration: none;
     color: black;
-    font-size: 14px;
+    font-family: var(--monument-reg);
+    font-size: var(--size-p2);
     display: flex;
     align-items: center;
     gap: 5px;
@@ -116,7 +140,7 @@ const { data } = Astro.props;
   }
 
   .arrow {
-    font-size: 20px;
+    font-size: var(--size-p2);
   }
 
   .image-container img {
@@ -130,38 +154,52 @@ const { data } = Astro.props;
   }
 
   .details h1 {
-    font-size: 22px;
+    font-family: var(--archivo);
+    font-size: var(--size-h1);
     margin: 0;
   }
 
   .details h2 {
-    font-size: 18px;
-    color: #333;
+    font-family: var(--archivo);
+    font-size: var(--size-h1);
     margin-bottom: 10px;
   }
 
+  .brand {
+    font-family: var(--archivo);
+    font-size: var(--size-h3);
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }
+
   .description {
-    font-size: 14px;
     line-height: 1.6;
-    color: #222;
+    font-size: var(--size-p1);
+    font-family: var(--monument-reg);
     margin-bottom: 60px;
   }
 
   .info p {
-    font-size: 14px;
+    font-size: var(--size-p1);
+    font-family: var(--monument-reg);
     margin-bottom: 10px;
     border-top: 1px solid #979797;
     padding-top: 10px;
     width: 80%;
   }
 
+  .stand,
   .vask {
+    font-family: var(--monument-bold);
+  }
+
+  .border-vask {
     border-bottom: 1px solid #979797;
     padding-bottom: 14px;
   }
 
   .availability-btn {
-    background-color: #ff4d00;
+    background-color: var(--orange-color);
     color: rgb(0, 0, 0);
     padding: 10px 20px;
     border-radius: 20px;
@@ -169,7 +207,8 @@ const { data } = Astro.props;
     text-align: center;
     text-decoration: none;
     margin-top: 20px;
-    font-weight: bold;
+    font-family: var(--monument-reg);
+    font-size: var(--size-h3);
   }
 
   .container1 {
@@ -179,8 +218,8 @@ const { data } = Astro.props;
 
   .udvalg-overskrift {
     text-align: center;
-    font-size: 40px;
-    font-weight: 300;
+    font-family: var(--archivo);
+    font-size: var(--size-h1);
     margin-top: 40px;
   }
 
@@ -201,10 +240,12 @@ const { data } = Astro.props;
 
   .size,
   .name {
-    background-color: #cd59ff;
+    background-color: var(--purple-color);
     color: black;
     padding: 3px 10px;
     border-radius: 15px;
+    font-family: var(--monument-reg);
+    font-size: var(--size-h3);
   }
 
   @media (min-width: 768px) {
@@ -217,6 +258,12 @@ const { data } = Astro.props;
     .grid2 {
       padding-top: 30px;
       margin-right: 30px;
+    }
+
+    .udvalg {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 5px;
     }
   }
 
@@ -232,13 +279,19 @@ const { data } = Astro.props;
     }
 
     .grid1 {
-      width: 60%;
+      width: 80%;
       justify-self: end;
     }
 
     .grid2 {
       padding-top: 30px;
-      margin-right: 300px;
+      margin-right: 100px;
+    }
+
+    .udvalg {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 5px;
     }
   }
 </style>

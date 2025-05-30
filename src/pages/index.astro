@@ -194,7 +194,8 @@ const sharedDresses = [
     color: #000;
     border: none;
     padding: 10px 20px;
-    font: var(--font-size-p1) var(--archivo);
+    font-size: var(--size-h3);
+    font-family: var(--archivo);
     cursor: pointer;
     border-radius: 30px;
     margin-bottom: 40px;
@@ -203,8 +204,7 @@ const sharedDresses = [
   }
 
   .tilmeld-overskrift {
-    background-color: #f3ffde;
-    color: #000;
+    background-color: var(--yellow-color);
     padding: 10px;
     border-top: solid 1px #000;
     margin-top: 30px;
@@ -234,6 +234,14 @@ const sharedDresses = [
     cursor: pointer;
   }
 
+  .dropdown :hover {
+    background-color: var(--yellow-color);
+  }
+
+  .dropdown-sidst :hover {
+    background-color: var(--yellow-color);
+  }
+
   .dropdown-header.open-bg {
     background-color: var(--yellow-color);
   }
@@ -254,8 +262,7 @@ const sharedDresses = [
   }
 
   .dropdown-number {
-    background-color: #3b7d3c;
-    color: rgb(0, 0, 0);
+    background-color: var(--green-color);
     border-radius: 50%;
     width: 30px;
     height: 30px;
