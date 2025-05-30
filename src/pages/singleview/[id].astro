@@ -208,6 +208,19 @@ const { data } = Astro.props;
   }
 
   @media (min-width: 768px) {
+    .container1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .grid2 {
+      padding-top: 30px;
+      margin-right: 30px;
+    }
+  }
+
+  @media (min-width: 1024px) {
     .back-link {
       margin-left: 35px;
     }
