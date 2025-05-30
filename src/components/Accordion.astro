@@ -131,19 +131,16 @@ const accordionData = [
         item.classList.toggle("open-bg");
 
         if (item.classList.contains("active")) {
-          // Hvis ekstraindhold er synligt, vis hele højde
-          if (
-            extra &&
-            extra.style.maxHeight &&
-            extra.style.maxHeight !== "0px"
-          ) {
-            content.style.maxHeight = content.scrollHeight + "px";
-          } else {
-            // Ellers vis kun almindeligt indhold
-            const totalHeight =
-              content.scrollHeight - (extra?.scrollHeight || 0);
-            content.style.maxHeight = totalHeight + "px";
-          }
+          const totalHeight = content.scrollHeight - (extra?.scrollHeight || 0);
+          content.style.maxHeight = totalHeight + "px";
+
+          // 💡 Når billeder loader, opdater højde igen
+          const imgs = item.querySelectorAll("img");
+          imgs.forEach((img) => {
+            img.addEventListener("load", () => {
+              content.style.maxHeight = content.scrollHeight + "px";
+            });
+          });
         } else {
           content.style.maxHeight = null;
         }
