@@ -25,8 +25,7 @@ console.log(data);
     </div>
 
     <div class="headline-container">
-      <h2 class="headline">Lej tøj til den helt <br />specielle anledning</h2>
-
+      <h1>Lej tøj til den helt <br />specielle anledning</h1>
       <p class="description">
         Som medlem af Another Closet kan du leje festtøj i en uge til til 350 kr
         pr styk. Det kræver bare at du kan hente tøjet selv, og bringe det
@@ -72,21 +71,21 @@ console.log(data);
     height: 200px;
     object-fit: contain;
   }
-  .headline {
+
+  h1 {
     font: var(--size-h1) var(--archivo);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: left;
+    line-height: 40px;
   }
   .description {
-    font: var(--size-p2) var(--monument-reg);
-    line-height: 1.7;
+    font: var(--size-p1) var(--monument-reg);
     max-width: 500px;
     text-align: left;
   }
   .arrow-down {
     font-size: 28px;
     margin-top: 60px;
-    animation: bounce 1.5s infinite;
   }
   .headline-container {
     margin: 0 55px;
@@ -122,6 +121,10 @@ console.log(data);
   }
 
   @media (min-width: 768px) {
+    h1 {
+      line-height: 50px;
+    }
+
     .listview_container {
       display: grid;
       grid-template-columns: 1fr 1fr;
