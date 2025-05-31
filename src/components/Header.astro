@@ -12,22 +12,6 @@
     <a href="/kjoler">kjoleskabet</a>
     <a href="/faq">spørgsmål og svar</a>
   </div>
-
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const sideMenu = document.getElementById("sideMenu");
-    const closeButton = document.getElementById("closeButton");
-
-    menuButton.addEventListener("click", () => {
-      sideMenu.classList.toggle("open");
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!sideMenu.contains(e.target) && !menuButton.contains(e.target)) {
-        sideMenu.classList.remove("open");
-      }
-    });
-  </script>
 </header>
 
 <style>
@@ -176,3 +160,19 @@
     }
   }
 </style>
+
+<script>
+  const menuButton = document.getElementById("menuButton");
+  const sideMenu = document.getElementById("sideMenu");
+  const closeButton = document.getElementById("closeButton");
+
+  menuButton.addEventListener("click", () => {
+    sideMenu.classList.toggle("open");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!sideMenu.contains(e.target) && !menuButton.contains(e.target)) {
+      sideMenu.classList.remove("open");
+    }
+  });
+</script>
