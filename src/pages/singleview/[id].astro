@@ -155,13 +155,13 @@ const { data } = Astro.props;
 
   .details h1 {
     font-family: var(--archivo);
-    font-size: var(--size-h1);
+    font-size: var(--size-h2);
     margin: 0;
   }
 
   .details h2 {
     font-family: var(--archivo);
-    font-size: var(--size-h1);
+    font-size: var(--size-h2);
     margin-bottom: 10px;
   }
 
@@ -200,15 +200,16 @@ const { data } = Astro.props;
 
   .availability-btn {
     background-color: var(--orange-color);
-    color: rgb(0, 0, 0);
+    color: #000;
+    border: none;
     padding: 10px 20px;
-    border-radius: 20px;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 20px;
+    font-size: var(--size-p1);
     font-family: var(--monument-reg);
-    font-size: var(--size-h3);
+    cursor: pointer;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    display: inline-block;
   }
 
   .container1 {
