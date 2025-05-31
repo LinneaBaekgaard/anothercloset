@@ -116,11 +116,6 @@ const sharedDresses = [
       src="/img/billede-1-bagerst.png"
       alt="Gruppebillede af kvinder"
     />
-    <img
-      class="billede-foran"
-      src="/img/billede-2-oeverst.png"
-      alt="Tøj hængende på tøjstativ"
-    />
   </section>
 
   <div class="rulletekst">
@@ -282,20 +277,15 @@ const sharedDresses = [
   }
 
   .billeder-container {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .billede-bagved {
-    grid-column: 2/6;
-    grid-row: 1/4;
-  }
-
-  .billede-foran {
-    grid-column: 3/5;
-    grid-row: 3/6;
+    width: 80%;
+    height: auto;
+    padding: 60px 0;
   }
 
   .rulletekst {
@@ -396,6 +386,11 @@ const sharedDresses = [
       margin: 17px 15px 10px 30px;
     }
 
+    .billede-bagved {
+      width: 60%;
+      height: auto;
+    }
+
     .cutoutbillede {
       margin-top: -140px;
       height: 230px;
@@ -435,6 +430,11 @@ const sharedDresses = [
 
     .dropdown-number {
       margin: 15px 15px 5px 30px;
+    }
+
+    .billede-bagved {
+      width: 40%;
+      height: auto;
     }
 
     .citat-container {
