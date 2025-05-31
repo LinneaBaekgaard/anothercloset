@@ -7,7 +7,7 @@ import "../style/global.css";
   <a href={`../singleview/${data.id}`}>
     <img src={"/img/" + data.img} alt={data.imgdescr} />
     <p>
-      <span class="name">{data.brand}</span><br /><span class="size"
+      <span class="name">{data.brand}</span><span class="size"
         >str. {data.size}</span
       >
     </p>
@@ -29,13 +29,27 @@ import "../style/global.css";
     width: 90%;
   }
 
-  .size,
   .name {
+    display: block;
     background-color: var(--purple-color);
     font-family: var(--monument-reg);
     font-size: var(--size-p2);
-    padding: 3px 10px;
-    border-radius: 15px;
+    color: black;
+    padding: 5px 25px;
+    border-radius: 20px;
+    width: 110px;
+    margin: 0 auto;
+  }
+
+  .size {
+    display: inline-block;
+    background-color: var(--purple-color);
+    font-family: var(--monument-reg);
+    font-size: var(--size-p2);
+    color: black;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 40px;
   }
 
   a {
