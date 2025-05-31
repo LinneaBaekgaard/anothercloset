@@ -54,7 +54,7 @@
     left: -380px;
     width: 415px;
     height: 100%;
-    background-color: #f3ffde;
+    background-color: var(--yellow-color);
     transition: left 0.7s ease;
     padding: 160px 20px 20px 0;
     box-sizing: border-box;
@@ -82,7 +82,7 @@
     right: -4px;
     height: 100%;
     width: 40px;
-    background-color: #f3ffde;
+    background-color: var(--yellow-color);
     border-left: 1px solid black;
     writing-mode: vertical-rl;
     cursor: pointer;
@@ -97,11 +97,10 @@
   .side-menu a {
     display: block;
     padding: 10px 30px;
-    /* padding: 15px 20px; */
     text-decoration: none;
     color: #000;
-    border-top: solid 1px #f3ffde;
-    border-bottom: solid 1px #f3ffde;
+    border-top: solid 1px var(--yellow-color);
+    border-bottom: solid 1px var(--yellow-color);
     font: var(--size-h1) var(--archivo);
   }
 
@@ -128,7 +127,6 @@
       display: block;
       margin: 0 auto;
       margin-top: -20px;
-      /* width: 380px; */
     }
 
     #header_top {
@@ -172,8 +170,9 @@
       padding-top: 20px;
       font: var(--size-p1) var(--monument-reg);
     }
-  
-    #header_top p{
+
+    #header_top p {
       display: block;
+    }
   }
 </style>
