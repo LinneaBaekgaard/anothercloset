@@ -22,15 +22,6 @@
   --monument-thin: "Monument-Thin", sans-serif;
   --size-p1: 20px;
   --size-p2: 16px;
-
-  /* De gamle */
-  /* --font-size-p1: 20pt;
-  --font-size-p2: 14pt;
-  --font-size-h1: 48pt;
-  --font-size-h2: 38pt;
-  --font-size-h3: 28pt;
-  --font-size-h4: 18pt;
-  --font-size-h5: 20pt; */
 }
 
 @media (max-width: 768px) {
