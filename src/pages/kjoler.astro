@@ -63,13 +63,18 @@ console.log(data);
     padding: 0;
     text-align: center;
   }
+
   .discoball {
-    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin: -40px 0;
   }
-  .dicoball img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
+
+  .discoball img {
+    width: 100%;
+    height: auto;
   }
 
   h1 {
@@ -136,10 +141,10 @@ console.log(data);
     }
     .discoball {
       grid-column: 1;
+      margin: -80px;
     }
     .discoball img {
       width: 100%;
-      max-width: 500px;
       height: auto;
       object-fit: contain;
       display: block;
@@ -148,10 +153,9 @@ console.log(data);
     .headline-container {
       grid-column: 2;
       text-align: left;
+      margin-top: 100px;
     }
-    .headline-container {
-      text-align: left;
-    }
+
     .headline {
       margin-bottom: 20px;
     }
