@@ -51,15 +51,6 @@
     left: 0;
   }
 
-  .close-button {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
   .menu-label {
     position: absolute;
     top: 0;
@@ -164,14 +155,13 @@
 <script>
   const menuButton = document.getElementById("menuButton");
   const sideMenu = document.getElementById("sideMenu");
-  const closeButton = document.getElementById("closeButton");
 
   menuButton.addEventListener("click", () => {
     sideMenu.classList.toggle("open");
   });
 
   document.addEventListener("click", (e) => {
-    if (!sideMenu.contains(e.target) && !menuButton.contains(e.target)) {
+    if (!sideMenu.contains(e.target)) {
       sideMenu.classList.remove("open");
     }
   });
