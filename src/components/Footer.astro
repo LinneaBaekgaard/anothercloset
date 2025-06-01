@@ -2,7 +2,10 @@
   <section class="grid">
     <div class="tekst1">
       <h1>Mere info</h1>
-      <p>Spørgsmål og svar <br /> Om another closet</p>
+      <a href="/">
+        <p>Spørgsmål og svar</p>
+      </a>
+      <p class="margin-p">Om another closet</p>
       <br />
     </div>
 
@@ -82,13 +85,22 @@
     padding: 20px 0 0 20px;
   }
   h1 {
-    color: black;
+    color: var(--text-color);
     font: var(--size-h3) var(--archivo);
   }
 
   p {
-    color: black;
+    color: var(--text-color);
     font: var(--size-p2) var(--monument-reg);
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+
+  .margin-p {
+    margin-top: -15px;
   }
 
   .icons {
@@ -144,14 +156,14 @@
     }
 
     .logo_footer {
-      padding: 0 0 40px 0;
       display: flex;
       justify-content: flex-end;
+      padding-top: 50px;
     }
 
     .logo_footer img {
-      width: 500px;
-      height: auto;
+      width: auto%;
+      height: 7vw;
     }
   }
 </style>
